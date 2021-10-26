@@ -101,14 +101,13 @@ You can put pink there,
 you can put papaya whip or Peru,
 
 22
-00:01:19.487 --> 00:01:25.309
+00:01:19.487 --> 00:01:21.915
 all of my favorite named colors.
-&gt;&gt; Brian Holt: Okay,
 
 23
-00:01:25.309 --> 00:01:32.167
-secondary color here is
-going to be #f2af29.
+00:01:24.330 --> 00:01:32.167
+&gt;&gt; Brian Holt: Okay, secondary
+color here is going to be #f2af29.
 
 24
 00:01:32.167 --> 00:01:39.086
@@ -234,237 +233,240 @@ I have no idea why I chose 666.
 Well, it's a good color of gray.
 
 51
-00:03:19.838 --> 00:03:28.012
+00:03:19.838 --> 00:03:23.383
 [LAUGH] Whatever.
-&gt;&gt; Brian Holt: Okay, so that's one thing.
 
 52
+00:03:26.283 --> 00:03:28.012
+&gt;&gt; Brian Holt: Okay, so that's one thing.
+
+53
 00:03:28.012 --> 00:03:31.266
 You can centralize all your
 variables into one place,
 
-53
+54
 00:03:31.266 --> 00:03:33.683
 and then you can modify project-wide.
 
-54
+55
 00:03:33.683 --> 00:03:37.921
 And not only that, you can do things
 like vertical rhythm, z-index scaling,
 
-55
+56
 00:03:37.921 --> 00:03:42.301
 all of these advanced kind of CSS design
 system ideas that designers think about.
 
-56
+57
 00:03:42.301 --> 00:03:47.642
 You can kinda encapsulate your style
 guide inside these JavaScript objects.
 
-57
+58
 00:03:47.642 --> 00:03:52.166
 Furthermore, I can pull in libraries
 that will do lightened and
 
-58
+59
 00:03:52.166 --> 00:03:56.608
 darkened and all these kind of
 advanced color manipulations or
 
-59
+60
 00:03:56.608 --> 00:04:00.063
 vertical rhythm libraries and
 stuff like that.
 
-60
+61
 00:04:00.063 --> 00:04:02.060
 They can pull that in and
 use that inside your JavaScript so
 
-61
+62
 00:04:02.060 --> 00:04:03.382
 that's why I'm a big fan of emotion.
 
-62
-00:04:03.382 --> 00:04:10.182
-I think this is really compelling stuff.
-&gt;&gt; Brian Holt: So
-
 63
-00:04:10.182 --> 00:04:13.413
-let's even take this another step further.
+00:04:03.382 --> 00:04:05.867
+I think this is really compelling stuff.
 
 64
+00:04:10.012 --> 00:04:13.413
+&gt;&gt; Brian Holt: So
+let's even take this another step further.
+
+65
 00:04:13.413 --> 00:04:15.863
 What happens if I wanted to style Link?
 
-65
+66
 00:04:15.863 --> 00:04:18.986
 Well that's different, right,
 that's not header, right?
 
-66
+67
 00:04:18.986 --> 00:04:22.184
 Header was just a string
 that I passed in there, so
 
-67
+68
 00:04:22.184 --> 00:04:24.326
 how do I style one of these links?
 
-68
+69
 00:04:24.326 --> 00:04:30.207
 Well, let's do that,
 const NavLink = styled,
 
-69
+70
 00:04:30.207 --> 00:04:34.277
 and I just pass it in Link, right?
 
-70
+71
 00:04:34.277 --> 00:04:36.704
 And it'll figure out how
 to style it on it's own.
 
-71
+72
 00:04:36.704 --> 00:04:42.332
 And then on that,
 I wanna have it do it on hover, so
 
-72
+73
 00:04:42.332 --> 00:04:48.372
 I just say &amp; hover,
 &gt;&gt; Brian Holt: text-decoration,
 
-73
+74
 00:04:51.171 --> 00:04:51.869
 &gt;&gt; Brian Holt: underline.
 
-74
-00:04:56.524 --> 00:04:57.046
-&gt;&gt; Brian Holt: So this
-
 75
-00:04:57.046 --> 00:05:00.100
-&amp; refers to whatever is in here, right?
+00:04:56.524 --> 00:05:00.100
+&gt;&gt; Brian Holt: So this &amp; refers
+to whatever is in here, right?
 
 76
 00:05:00.100 --> 00:05:02.712
 So on link hover, do this.
 
 77
-00:05:02.712 --> 00:05:09.387
+00:05:02.712 --> 00:05:05.812
 And now I just change these two links.
-&gt;&gt; Brian Holt: So I'll just do
 
 78
-00:05:09.387 --> 00:05:13.870
-all four of them at once and say NavLink.
-&gt;&gt; Brian Holt: So
+00:05:08.750 --> 00:05:11.060
+&gt;&gt; Brian Holt: So I'll just do all
+four of them at once and say NavLink.
 
 79
-00:05:13.870 --> 00:05:18.579
-this one, that one, that one, and that
-one, I changed those from link to NavLink.
+00:05:13.738 --> 00:05:16.448
+&gt;&gt; Brian Holt: So this one,
+that one, that one, and that one,
 
 80
-00:05:18.579 --> 00:05:24.079
-Save that, and now if I go over to
-my library, if I cursor over it,
+00:05:16.448 --> 00:05:18.579
+I changed those from link to NavLink.
 
 81
-00:05:24.079 --> 00:05:30.366
-it's now it's a NavLink.
-&gt;&gt; Brian Holt: That's pretty cool,
+00:05:18.579 --> 00:05:22.379
+Save that, and
+now if I go over to my library,
 
 82
-00:05:30.366 --> 00:05:35.815
-right?
-&gt;&gt; Brian Holt: So
+00:05:22.379 --> 00:05:26.381
+if I cursor over it,
+it's now it's a NavLink.
 
 83
-00:05:35.815 --> 00:05:37.411
-that's how you do things like hover.
+00:05:29.748 --> 00:05:30.596
+&gt;&gt; Brian Holt: That's pretty cool, right?
 
 84
+00:05:35.716 --> 00:05:37.411
+&gt;&gt; Brian Holt: So
+that's how you do things like hover.
+
+85
 00:05:37.411 --> 00:05:40.593
 You can do nested selectors,
 all those kind of things.
 
-85
+86
 00:05:40.593 --> 00:05:45.040
 So if I wanted to say, I only wanna
 target the spans inside of this, right?
 
-86
+87
 00:05:45.040 --> 00:05:47.408
 Cuz this one doesn't have a span,
 but this one does.
 
-87
+88
 00:05:47.408 --> 00:05:53.386
 So I would say span, and
 I want the color on this to be pink or
 
-88
+89
 00:05:53.386 --> 00:05:57.300
 something like that, I don't know.
 
-89
+90
 00:05:57.300 --> 00:06:01.910
 So now if I refresh it,
 notice that the color, that should.
 
-90
+91
 00:06:01.910 --> 00:06:07.158
 It's still overriding to be this one,
 because that's actually the link above it.
 
-91
+92
 00:06:07.158 --> 00:06:13.556
 But could I do,
 &gt;&gt; Brian Holt: Go
 
-92
+93
 00:06:13.556 --> 00:06:16.627
 on display inline-block and
 
-93
+94
 00:06:16.627 --> 00:06:21.671
 border 1px solid red,
 or something like that.
 
-94
+95
 00:06:21.671 --> 00:06:25.003
 So notice that this one has a solid
 red box, but this one doesn't, right?
 
-95
+96
 00:06:25.003 --> 00:06:29.787
 So I can actually target things inside
 of it as well and scope that to this.
 
-96
+97
 00:06:29.787 --> 00:06:32.172
 This is isn't going to affect
 every spin on the page,
 
-97
+98
 00:06:32.172 --> 00:06:34.943
 this is only going to affect
 spans inside of NavLink, right?
 
-98
+99
 00:06:34.943 --> 00:06:36.798
 So you can also do that nesting.
 
-99
+100
 00:06:36.798 --> 00:06:41.757
 What I'm trying to say is pretty much
 anything you can with do LESS or Sass,
 
-100
+101
 00:06:41.757 --> 00:06:46.023
 right, can be accomplished here as well,
 more or less, yeah.

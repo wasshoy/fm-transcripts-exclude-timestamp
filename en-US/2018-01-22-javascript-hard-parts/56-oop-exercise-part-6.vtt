@@ -1,479 +1,521 @@
 WEBVTT
 
 1
-00:00:00.000 --> 00:00:03.041
-Class user has a function at the top,
-the first one,
+00:00:00.270 --> 00:00:03.170
+&gt;&gt; Will Sentance: Class user
+has a function at the top.
 
 2
-00:00:03.041 --> 00:00:07.678
-which is just the functionality version
-of user that we did earlier that creates
+00:00:03.170 --> 00:00:06.211
+The first one,
+which is just the functionality version of
 
 3
-00:00:07.678 --> 00:00:09.960
+00:00:06.211 --> 00:00:10.198
+user that we did earlier that creates
 inside of an empty object, whatever.
 
 4
-00:00:09.960 --> 00:00:13.142
-That's this bit here and
-we rename that portion of it.
+00:00:10.198 --> 00:00:11.640
+That's this bit here.
 
 5
-00:00:13.142 --> 00:00:14.594
-We rename it what Katie?
+00:00:11.640 --> 00:00:15.390
+And we rename that portion of it,
+we rename it what, Katie?
 
 6
-00:00:14.594 --> 00:00:16.770
+00:00:15.390 --> 00:00:16.680
 Can you see what it says we rename it?
 
 7
-00:00:16.770 --> 00:00:21.435
-What did we name that bit that
-previously was just a regular function?
+00:00:18.350 --> 00:00:21.250
+What did we name that bit,
+previously it was just a regular function,
 
 8
-00:00:21.435 --> 00:00:23.173
-What did we name that bit?
+00:00:21.250 --> 00:00:22.620
+what did we name that bit?
 
 9
-00:00:23.173 --> 00:00:24.439
-&gt;&gt; The constructor?
+00:00:22.620 --> 00:00:23.250
+&gt;&gt; Katie: The constructor?
 
 10
-00:00:24.439 --> 00:00:25.468
-&gt;&gt; Constructor.
+00:00:23.250 --> 00:00:24.270
+&gt;&gt; Will Sentance: Constructor.
 
 11
-00:00:25.468 --> 00:00:29.264
+00:00:24.270 --> 00:00:27.600
 So we rename this bit,
-I don't know why, constructor.
+I don't know why constructor.
 
 12
-00:00:29.264 --> 00:00:33.217
+00:00:28.810 --> 00:00:31.270
 I mean, I do know why, but
 we rename that bit constructor.
 
 13
-00:00:33.217 --> 00:00:38.059
-And rather than having to manually
-populate the --set of shared functions
+00:00:32.370 --> 00:00:37.380
+And rather than having to
+manually populate the set of
 
 14
-00:00:38.059 --> 00:00:41.949
-that the objects that get returned
-out of calling user get a bond to.
+00:00:37.380 --> 00:00:41.760
+shared functions that the objects that
+get returned out of calling user get
 
 15
-00:00:41.949 --> 00:00:46.179
-Rather than manually populating them,
-Griffin, what do we do instead?
+00:00:41.760 --> 00:00:46.020
+a bond to, rather than manually populating
+them, Griffin, what do we do instead?
 
 16
-00:00:46.179 --> 00:00:48.909
-We just announced that
-it's functions there.
+00:00:48.120 --> 00:00:50.020
+We just announced those functions there.
 
 17
-00:00:48.909 --> 00:00:53.140
-We just say, but all that's doing
-when we announce those two functions,
+00:00:50.020 --> 00:00:51.697
+&gt;&gt; Griffin: Yeah.
 
 18
-00:00:53.140 --> 00:00:57.781
-is actually, under the hood, saying
-user.prototype centered to increment,
+00:00:51.697 --> 00:00:54.648
+&gt;&gt; Will Sentance: But all that's doing,
+when we announce those two functions,
 
 19
-00:00:57.781 --> 00:01:04.190
-user.prototype centered to login-- That's
-literally doing exactly the same thing.
+00:00:54.648 --> 00:00:58.324
+is actually under the hood, saying
+user.prototype centered to increment,
 
 20
-00:01:04.190 --> 00:01:09.978
-So we're just going to walk through
-it to make sure it's really clear.
+00:00:58.324 --> 00:01:00.600
+user.prototype centered to login.
 
 21
-00:01:09.978 --> 00:01:14.896
-Lindsey, what's the top line
-telling you to do?&gt;&gt; Carry
+00:01:00.600 --> 00:01:03.060
+That's literally doing
+exactly the same thing.
 
 22
-00:01:14.896 --> 00:01:20.510
-a function.&gt;&gt; The very top
-line.&gt;&gt; Declaring a-&gt;&gt; Class.
+00:01:03.060 --> 00:01:05.462
+So we're just gonna walk through
+it to make sure it's really clear.
 
 23
-00:01:20.510 --> 00:01:23.643
-A class,
-I'm gonna call it a class I guess.
+00:01:05.462 --> 00:01:10.780
+Lindsey, what's the top line there
+in solution four tell us to do?
 
 24
-00:01:23.643 --> 00:01:28.131
-And it has two parts to it,
-what's the first part tell it to do?
+00:01:10.780 --> 00:01:12.627
+&gt;&gt; Lindsey: Declaring a function.
 
 25
-00:01:28.131 --> 00:01:31.605
+00:01:12.627 --> 00:01:15.793
+&gt;&gt; Will Sentance: The very top bit,
+the very top line, declaring a-
+
+26
+00:01:15.793 --> 00:01:16.401
+&gt;&gt; Lindsey: Class thing.
+
+27
+00:01:16.401 --> 00:01:19.712
+&gt;&gt; Will Sentance: Class, aha, class, aha.
+
+28
+00:01:19.712 --> 00:01:21.130
+There it is.
+
+29
+00:01:21.130 --> 00:01:23.910
+A class, I'm gonna call it a class,
+I guess.
+
+30
+00:01:23.910 --> 00:01:25.147
+And it has two parts to it.
+
+31
+00:01:25.147 --> 00:01:26.605
+What's the first part tell us to do?
+
+32
+00:01:26.605 --> 00:01:28.880
 We go straight in and
 do this stuff immediately.
 
-26
-00:01:31.605 --> 00:01:34.994
+33
+00:01:28.880 --> 00:01:31.734
 What's the first part tell us to do,
 Lindsey?
 
-27
-00:01:34.994 --> 00:01:36.434
-&gt;&gt; Run a constructor.
-
-28
-00:01:36.434 --> 00:01:38.128
-&gt;&gt; Well not run, create.
-
-29
-00:01:38.128 --> 00:01:38.806
-&gt;&gt; Create.
-
-30
-00:01:38.806 --> 00:01:39.950
-&gt;&gt; So at this point
-
-31
-00:01:58.560 --> 00:01:59.304
-There it is.
-
-32
-00:01:59.304 --> 00:02:03.642
-It's given the label constructor which
-means now we can specifically say,
-
-33
-00:02:03.642 --> 00:02:07.572
-when I call user I'm calling this
-bit the constructor portion of it.
-
 34
-00:02:07.572 --> 00:02:10.486
-But we can see it's absolutely identical,
-okay.
+00:01:31.734 --> 00:01:32.794
+&gt;&gt; Lindsey: Run a constructor.
 
 35
-00:02:10.486 --> 00:02:14.549
-And then we get to just lift off the
-functions that we want to get stored in
+00:01:32.794 --> 00:01:33.634
+&gt;&gt; Will Sentance: Well, not run, create.
 
 36
-00:02:14.549 --> 00:02:15.905
-the user.prototype.
+00:01:33.634 --> 00:01:34.673
+&gt;&gt; Lindsey: Or create.
 
 37
-00:02:15.905 --> 00:02:19.410
-We don't even do commas between
-them you just list them off.
+00:01:34.673 --> 00:01:39.913
+&gt;&gt; Will Sentance: So
+at this point here, constructed here,
 
 38
-00:02:19.410 --> 00:02:22.196
-&gt;&gt; And what's the first one say, Lindsey?
+00:01:39.913 --> 00:01:45.017
+that is exactly the same as this bit here.
 
 39
-00:02:22.196 --> 00:02:23.072
-&gt;&gt; Increment.
+00:01:45.017 --> 00:01:48.781
+It's saying, store the function,
+that when we run user later on,
 
 40
-00:02:23.072 --> 00:02:27.769
-&gt;&gt; Increment, which gets stored
-automatically because this new syntax
+00:01:48.781 --> 00:01:50.949
+this is the function that we run here.
 
 41
-00:02:27.769 --> 00:02:32.387
-class says store it increment
-in the user.prototype.increment.
+00:01:50.949 --> 00:01:54.800
+Just like when we said store user as
+a function when we run user later on,
 
 42
-00:02:32.387 --> 00:02:33.262
-There it is.
+00:01:54.800 --> 00:01:58.160
+this is the function that we're running,
+okay?
 
 43
-00:02:33.262 --> 00:02:37.100
+00:01:58.160 --> 00:01:59.820
+Done, there it is.
+
+44
+00:01:59.820 --> 00:02:04.063
+It's given the label constructor,
+that means now, we can specifically say,
+
+45
+00:02:04.063 --> 00:02:07.874
+when I call user, I'm calling this
+bit the constructor portion of it.
+
+46
+00:02:07.874 --> 00:02:10.680
+But we can see it's absolutely identical,
+okay?
+
+47
+00:02:10.680 --> 00:02:15.029
+And then we get to just list off
+the functions that we wanna get
+
+48
+00:02:15.029 --> 00:02:17.427
+stored in the user.prototype.
+
+49
+00:02:17.427 --> 00:02:19.840
+We don't even do commas between them,
+we just list them off.
+
+50
+00:02:19.840 --> 00:02:21.816
+And what's the first one say, Lindsey?
+
+51
+00:02:21.816 --> 00:02:22.710
+&gt;&gt; Lindsey: Increment.
+&gt;&gt; Will Sentance: Increment, which gets
+
+52
+00:02:22.710 --> 00:02:28.130
+stored automatically because of this
+new syntax class says, store it,
+
+53
+00:02:28.130 --> 00:02:32.220
+increment in the user.prototype.increment,
+there it is.
+
+54
+00:02:32.220 --> 00:02:37.687
 And then login gets stored,
 user.prototype.login.
 
-44
-00:02:37.100 --> 00:02:38.790
+55
+00:02:37.687 --> 00:02:39.335
 And at the end of that block,
 
-45
-00:02:38.790 --> 00:02:43.581
+56
+00:02:39.335 --> 00:02:44.480
 you've achieved exactly the same thing
 in practice as we did in solution three.
 
-46
-00:02:43.581 --> 00:02:46.258
-But, it is a little bit
+57
+00:02:44.480 --> 00:02:46.630
+But it is a little bit
 more like our python or
 
-47
-00:02:46.258 --> 00:02:51.191
+58
+00:02:46.630 --> 00:02:50.130
 other languages where we've listed all of
 our functions that are gonna be shared by
 
-48
-00:02:51.191 --> 00:02:54.292
+59
+00:02:50.130 --> 00:02:54.560
 the resulting objects that
 come from running user.
 
-49
-00:02:54.292 --> 00:02:55.730
-But, it's all a mask.
+60
+00:02:54.560 --> 00:02:56.142
+But it's all a mask.
 
-50
-00:02:55.730 --> 00:03:00.657
+61
+00:02:56.142 --> 00:02:59.620
 It's all a mask for how JavaScript's
 actually working under the hood.
 
-51
-00:03:00.657 --> 00:03:05.017
-Under the hood, it's doing all of this,
-and it's important.
+62
+00:02:59.620 --> 00:03:02.221
+Under the hood, it's doing all of this.
 
-52
-00:03:05.017 --> 00:03:08.409
+63
+00:03:02.221 --> 00:03:03.370
+And it's important.
+
+64
+00:03:03.370 --> 00:03:05.130
 There's levels of under
 the hood we wanna reach.
 
-53
-00:03:08.409 --> 00:03:11.479
+65
+00:03:06.240 --> 00:03:12.260
 There's levels that we don't wanna reach.
 
-54
-00:03:11.479 --> 00:03:15.710
-There's levels where we don't
-need to go that deep because.
-
-55
-00:03:15.710 --> 00:03:19.539
-Doing so doesn't help us write cleaner,
-better code, easier to debug,
-
-56
-00:03:19.539 --> 00:03:20.466
-more efficient.
-
-57
-00:03:20.466 --> 00:03:22.749
-We just don't need to
-know most of the time.
-
-58
-00:03:22.749 --> 00:03:24.475
-This is a level we do need to know.
-
-59
-00:03:24.475 --> 00:03:27.006
-if we don't realize that
-when we are doing this.
-
-60
-00:03:27.006 --> 00:03:31.515
-If we think when we come to JavaScript
-coming from Python, that the is behaving
-
-61
-00:03:31.515 --> 00:03:35.531
-the same as [SOUND] Python, we're gonna
-get incredibly upset when we discover
-
-62
-00:03:35.531 --> 00:03:40.143
-that, actually, under the hood We have
-this prototype prototype property that
-
-63
-00:03:40.143 --> 00:03:45.118
-has a bunch of shared function on it, and
-that's actually where our functions are.
-
-64
-00:03:45.118 --> 00:03:49.813
-We're gonna get very upset when we try and
-understand what's happening inside
-
-65
-00:03:49.813 --> 00:03:53.315
-the core to user with a new keyword,
-and it's saying this.
-
 66
-00:03:53.315 --> 00:03:56.257
-What is this,
-it's this auto created object,
+00:03:12.260 --> 00:03:17.110
+There's levels where we don't need
+to go that deep because doing so
 
 67
-00:03:56.257 --> 00:03:58.359
-well we want to change the product.
+00:03:17.110 --> 00:03:22.280
+doesn't help us write cleaner, better
+code, easier to debug, more efficient.
 
 68
-00:03:58.359 --> 00:03:59.450
-How do we do that?
+00:03:22.280 --> 00:03:24.430
+We just don't need to know,
+most of the time.
 
 69
-00:03:59.450 --> 00:04:04.280
-&gt;&gt; None of it's going to work the way
-we expect from other languages because
+00:03:24.430 --> 00:03:26.190
+This is a level we do need to know.
 
 70
-00:04:04.280 --> 00:04:07.131
-it's wrapping up a prototypal language.
+00:03:26.190 --> 00:03:30.260
+If we don't realize that when we are doing
+this, if we think when we come to
 
 71
-00:04:07.131 --> 00:04:09.744
-Jobs are inherently a typal language.
+00:03:30.260 --> 00:03:34.595
+JavaScript coming from Python, that
+they are is behaving the same as Python,
 
 72
-00:04:09.744 --> 00:04:14.574
-It does not behave in the typical
-classical style that is known from other
+00:03:34.595 --> 00:03:39.258
+we're gonna get incredibly upset when we
+discover that actually, under the hood,
 
 73
-00:04:14.574 --> 00:04:15.445
-languages.
+00:03:39.258 --> 00:03:40.638
+we have this prototype,
 
 74
-00:04:15.445 --> 00:04:18.057
-And yet, we didn't know that I guess.
+00:03:40.638 --> 00:03:44.149
+prototype property that has
+a bunch of shared functions on it.
 
 75
-00:04:18.057 --> 00:04:18.927
-Maybe we do?
+00:03:44.149 --> 00:03:45.842
+And that's actually
+where our functions are.
 
 76
-00:04:18.927 --> 00:04:19.590
-But now.
+00:03:45.842 --> 00:03:50.434
+We're gonna get very upset when we try and
+understand what's happening
 
 77
-00:04:19.590 --> 00:04:24.020
-Benefits, this approach,
-this final version,
+00:03:50.434 --> 00:03:54.660
+inside the core to user with a new
+keyword, and it's saying this.
 
 78
-00:04:24.020 --> 00:04:28.450
-this solution four emerging
-as the new standard.
+00:03:54.660 --> 00:03:57.737
+What is this,
+it's this auto created object.
 
 79
-00:04:28.450 --> 00:04:33.617
-Feels more like the sound of
-other languages like Python.
+00:03:57.737 --> 00:03:58.695
+Well, we wanna change the product.
 
 80
-00:04:33.617 --> 00:04:36.043
-It emulates very closely.
+00:03:58.695 --> 00:04:00.010
+How we do that?
 
 81
-00:04:36.043 --> 00:04:37.110
-Problems.
+00:04:00.010 --> 00:04:03.310
+None of it's gonna work the way
+we expect from other languages
 
 82
-00:04:37.110 --> 00:04:41.743
-Not even 99%, 99.9% of developers
-have no idea how it works, and
+00:04:03.310 --> 00:04:06.560
+because it's wrapping up
+a prototype language.
 
 83
-00:04:41.743 --> 00:04:47.124
-that means it's hard to debug but its also
-every senior, or every VP of engineering,
+00:04:06.560 --> 00:04:10.322
+Job's inherently a prototypal language,
+it does not behave in the typical,
 
 84
-00:04:47.124 --> 00:04:51.389
-every senior developer's favorite
-itnerview question for mid and
+00:04:10.322 --> 00:04:13.060
+classical style that it's
+known from other languages.
 
 85
-00:04:51.389 --> 00:04:54.710
-senir developers,
-how is the new keyword working?
+00:04:14.180 --> 00:04:17.739
+And yet, we didn't know that,
+I guess, maybe we do?
 
 86
-00:04:54.710 --> 00:04:59.708
-Well, man, one of our favorite problems
-is a set of codesmith in the first couple
+00:04:17.739 --> 00:04:18.782
+I don't know.
 
 87
-00:04:59.708 --> 00:05:02.501
-of weeks,
-is rebuild the new keyword for us.
+00:04:18.782 --> 00:04:23.767
+But now, I was gonna say,
+benefits this approach,
 
 88
-00:05:02.501 --> 00:05:03.825
-We have everything.
+00:04:23.767 --> 00:04:30.580
+this final version, this solution
+four emerging as the new standard.
 
 89
-00:05:03.825 --> 00:05:05.809
-We can rebuild the new keyword.
+00:04:31.624 --> 00:04:36.150
+Feels more the sound of other languages
+like Python, it emulates very closely.
 
 90
-00:05:05.809 --> 00:05:08.161
-We wouldn't rebuild it that way, but
+00:04:36.150 --> 00:04:39.024
+Problems, I think it's not even 99%.
 
 91
-00:05:08.161 --> 00:05:13.190
-we can create a function that achieves
-the same as a new keyword, no problem now.
+00:04:39.024 --> 00:04:43.300
+99.9% of developers have
+no idea how it works.
 
 92
-00:05:13.190 --> 00:05:16.366
-Because we know every single piece.
+00:04:43.300 --> 00:04:46.803
+And that means it's hard to debug but
+its also every senior, or
 
 93
-00:05:16.366 --> 00:05:20.464
+00:04:46.803 --> 00:04:48.268
+every VP of engineering.
+
+94
+00:04:48.268 --> 00:04:51.889
+And every senior developer's favorite
+interview question for mid and
+
+95
+00:04:51.889 --> 00:04:55.420
+senior developers,
+how is the new keyword working?
+
+96
+00:04:55.420 --> 00:04:59.990
+Well, man, one of our favorite
+problems is a set of codesmith
+
+97
+00:04:59.990 --> 00:05:04.360
+in the first couple of weeks,
+is rebuild the new keyword for us.
+
+98
+00:05:05.460 --> 00:05:06.640
+We have everything.
+
+99
+00:05:06.640 --> 00:05:08.210
+We can rebuild the new keyword.
+
+100
+00:05:08.210 --> 00:05:09.438
+We wouldn't rebuild that.
+
+101
+00:05:09.438 --> 00:05:12.664
+We can create a function that
+achieves the same as a new keyword,
+
+102
+00:05:12.664 --> 00:05:15.255
+no problem now because we
+know every single piece.
+
+103
+00:05:15.255 --> 00:05:21.544
 Solution two was just bundled up,
 wrapped up,
 
-94
-00:05:20.464 --> 00:05:24.665
-given some fancy automatons
-by solution three,
+104
+00:05:21.544 --> 00:05:28.158
+given some fancy automations
+by solution three.
 
-95
-00:05:24.665 --> 00:05:29.274
-just automated bunch of,
-got rid off bunch of stuff,
+105
+00:05:28.158 --> 00:05:34.240
+Got rid off bunch of stuff, automated
+it with a new keyword, there it is.
 
-96
-00:05:29.274 --> 00:05:33.290
-automated it with a new keyword,
-these it is.
-
-97
-00:05:33.290 --> 00:05:38.215
+106
+00:05:34.240 --> 00:05:39.143
 And then solution four said,
-even that was too long winded.
+even that was too long-winded.
 
-98
-00:05:38.215 --> 00:05:40.533
+107
+00:05:39.143 --> 00:05:40.950
 Let's make it even easier.
 
-99
-00:05:40.533 --> 00:05:44.590
+108
+00:05:40.950 --> 00:05:46.010
 Now, to find me a clause,
 I'll put increment and
 
-100
-00:05:44.590 --> 00:05:48.358
-login in the prototype
-in user dot prototype.
+109
+00:05:46.010 --> 00:05:48.250
+login in the prototype of user.prototype.
 
-101
-00:05:48.358 --> 00:05:50.773
-I'll put it in their for you.
+110
+00:05:48.250 --> 00:05:50.233
+I'll put it in there for you.
 
-102
-00:05:50.773 --> 00:05:52.897
+111
+00:05:50.233 --> 00:05:51.627
 Just list them off there.
 
-103
-00:05:52.897 --> 00:05:54.475
-I'll o it for you.
+112
+00:05:51.627 --> 00:05:54.210
+Just list of all the functions you want
+a new prototype, I'll do it for you.
 

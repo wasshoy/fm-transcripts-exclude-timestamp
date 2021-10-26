@@ -1,0 +1,60 @@
+[00:00:00]
+>> So in this next section, what I'd like to do is walk through building something. And I figured that the best thing to walk you building is sort of a simple web server. We tend to use node and JavaScript a lot to do web type things, so that seems like a natural place to start and the deno docs do this as well.
+
+[00:00:16]
+Although the deno docs will focus on like a TCP server as well, which is something that you can telnet into. So we're just gonna focus on the web scenario here, and build from there. So, this is sort of the first time that we're gonna get to use the deno standard library in any sort of depth here.
+
+[00:00:38]
+So let me do this, let's go ahead and kick out all of the changes, and I'm gonna switch my branch over > Discard all the Files. And then let me switch my branch to building up a simple web server. All right, so we should have an empty app.ts file.
+
+[00:01:00]
+So what we wanna do here is first we're going to bring in the deno standard library server, web server. So I'm just gonna import that here. And then you should be used to seeing this where we get this squiggly because it wants us to fetch. And so we're gonna fetch the module, and then that should give us some intellicense here, there we go.
+
+[00:01:24]
+All right, so what we want to do is create this web server here based on this serve object that we've imported from the standard library. And if we were to look there's some other things in here. There's some decodeURI components, some other stuff that we could use, but all we really need is this serve object.
+
+[00:01:43]
+That's what we'll stick with. The next thing that we're going to want to do here is define a port and a host. So we'll just do const PORT = 3000. We'll run a PORT 3000. And let's do const HOSTNAME. And then we're gonna set this equal to, we could do like local host.
+
+[00:02:06]
+We could do 127.0.0.1 but it's actually better to do this, which I just called the doughnuts, 0.0.0.0, which is basically the same thing as a local host. Now, but it works better with containers with docker. So it's sort of the same thing. It's just like saying localhost, but it's the four doughnuts.
+
+[00:02:28]
+And then what we're gonna want to do is tell our server to basically to listen. So we're gonna create a server, .const server = serve. And then the server, as you can see here with our typescript, and once either an address or port and hostname, so let's do options and look at what our options are with control.
+
+[00:02:50]
+Oops, control support, support 3000, reset that support, and then you can see hostname here is optional. I assume it defaults to localhost, but we'll set the hostname here as well. And we're just referencing these constants. And then what we need to do now is we need to listen for incoming requests to the web server.
+
+[00:03:12]
+And to do that, Deno uses this sort of strange for away const request of server loop, which looks like an infinite loop, but this is how you start the server and listen for requests that come in. So we're awaiting this server object for any request that comes in.
+
+[00:03:37]
+Every time one comes in we want to do something. And to handle that, what we can do is say req.respond. And then, let's see here. Inside here we have a response object, again utilizing our typescript, and we can set the body equal to Hello world. We've done a lot of Hello world today.
+
+[00:04:00]
+And then let's go ahead and save that and our format is working nicely, which is wonderful. Okay, so considering, or assuming that we've done everything correctly, that I've done everything correctly, we should have a very simple web server here. Let's get out of this. So let's just try to fire it up and see what happens.
+
+[00:04:22]
+Let me just make sure I'm in the right folder I am. So app run, and then I want to show you all a shortcut here so that we don't have to keep passing in over and over and over again this like allow net, allow read, allow this, allow that.
+
+[00:04:35]
+We can just do -A, which basically means just opt out of all the security. Don't ask, don't block anything, just let everything go. So this is basically like passing in every allow flag possible. So we're gonna allow, and then let's patch, let's do watch an unstable because we need that with a watch and then we'll run app.Ts, deno, app run this on app run is deno run, deno.
+
+[00:05:01]
+Deno run. I'm still learning how to say it. Okay, so it's running, but we don't know where it's running, which isn't super helpful. So let's do this. Console.log("server now running at http://") and check this out. I have this really cool extension called the strain. What is it called?
+
+[00:05:28]
+It's called string, template converters, template string converter is the name of it. This is for free. Does not have anything to do with deno, but it's this really cool extension written by Megan who's on the VS code team. Watch what it does. It's so simple but it's so awesome.
+
+[00:05:48]
+When you use the template literal syntax watch the quotes. It automatically converts the double quotes to backticks, right? So cool, one of my favorite extensions. It doesn't have to be, doesn't have to do anything really cool to be super beneficial. So thank you Megan for that. All right, so we're just gonna do that our server is running here and server is now running, and then because we've got the VS code terminal, we can just click here.
+
+[00:06:15]
+And we should, there we go, okay. So, we have a simple web server. Very nice, I know everybody's super impressed, hello world. All right, so that's our web server here. By the way, if we were going to specifically allow only local hosts, then we would pass this address to allow net, so the allowed net equals https://0000:3000.
+
+[00:06:46]
+And we could allow just that, but we're allowing everything with the -A. So let's talk about, so instead what we could do is, instead of returning this, let's return some HTML. So let's do this, Hello world. Okay, And then our watch changes. Let's go over here. We'll refresh, and now we have some actual HTML, which, if you didn't know you can do that you can, you don't actually need to return a properly formatted HTML document.
+
+[00:07:26]
+The browser's smart enough to figure that out so you can just give it an H1. Okay, but that's no way to build a web server, can't just return HTML on the body. So let's look at some common things that we would do with a web server other than just returning text which is not terribly impressive.
+

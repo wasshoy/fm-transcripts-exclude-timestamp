@@ -1,55 +1,65 @@
 [00:00:00]
->> Class user has a function at the top, the first one, which is just the functionality version of user that we did earlier that creates inside of an empty object, whatever. That's this bit here and we rename that portion of it. We rename it what Katie? Can you see what it says we rename it?
+>> Will Sentance: Class user has a function at the top. The first one, which is just the functionality version of user that we did earlier that creates inside of an empty object, whatever. That's this bit here. And we rename that portion of it, we rename it what, Katie? Can you see what it says we rename it?
 
-[00:00:16]
-What did we name that bit that previously was just a regular function? What did we name that bit?
->> The constructor?
->> Constructor. So we rename this bit, I don't know why, constructor. I mean, I do know why, but we rename that bit constructor. And rather than having to manually populate the --set of shared functions that the objects that get returned out of calling user get a bond to.
+[00:00:18]
+What did we name that bit, previously it was just a regular function, what did we name that bit?
+>> Katie: The constructor?
+>> Will Sentance: Constructor. So we rename this bit, I don't know why constructor. I mean, I do know why, but we rename that bit constructor. And rather than having to manually populate the set of shared functions that the objects that get returned out of calling user get a bond to, rather than manually populating them, Griffin, what do we do instead?
 
-[00:00:41]
-Rather than manually populating them, Griffin, what do we do instead? We just announced that it's functions there. We just say, but all that's doing when we announce those two functions, is actually, under the hood, saying user.prototype centered to increment, user.prototype centered to login-- That's literally doing exactly the same thing.
+[00:00:48]
+We just announced those functions there.
+>> Griffin: Yeah.
+>> Will Sentance: But all that's doing, when we announce those two functions, is actually under the hood, saying user.prototype centered to increment, user.prototype centered to login. That's literally doing exactly the same thing. So we're just gonna walk through it to make sure it's really clear.
 
-[00:01:04]
-So we're just going to walk through it to make sure it's really clear. Lindsey, what's the top line telling you to do?>> Carry a function.>> The very top line.>> Declaring a->> Class. A class, I'm gonna call it a class I guess. And it has two parts to it, what's the first part tell it to do?
+[00:01:05]
+Lindsey, what's the top line there in solution four tell us to do?
+>> Lindsey: Declaring a function.
+>> Will Sentance: The very top bit, the very top line, declaring a-
+>> Lindsey: Class thing.
+>> Will Sentance: Class, aha, class, aha. There it is. A class, I'm gonna call it a class, I guess. And it has two parts to it.
 
-[00:01:28]
-We go straight in and do this stuff immediately. What's the first part tell us to do, Lindsey?
->> Run a constructor.
->> Well not run, create.
->> Create.
->> So at this point There it is. It's given the label constructor which means now we can specifically say, when I call user I'm calling this bit the constructor portion of it.
+[00:01:25]
+What's the first part tell us to do? We go straight in and do this stuff immediately. What's the first part tell us to do, Lindsey?
+>> Lindsey: Run a constructor.
+>> Will Sentance: Well, not run, create.
+>> Lindsey: Or create.
+>> Will Sentance: So at this point here, constructed here, that is exactly the same as this bit here.
+
+[00:01:45]
+It's saying, store the function, that when we run user later on, this is the function that we run here. Just like when we said store user as a function when we run user later on, this is the function that we're running, okay? Done, there it is. It's given the label constructor, that means now, we can specifically say, when I call user, I'm calling this bit the constructor portion of it.
 
 [00:02:07]
-But we can see it's absolutely identical, okay. And then we get to just lift off the functions that we want to get stored in the user.prototype. We don't even do commas between them you just list them off.
->> And what's the first one say, Lindsey?
->> Increment.
->> Increment, which gets stored automatically because this new syntax class says store it increment in the user.prototype.increment.
+But we can see it's absolutely identical, okay? And then we get to just list off the functions that we wanna get stored in the user.prototype. We don't even do commas between them, we just list them off. And what's the first one say, Lindsey?
+>> Lindsey: Increment.
+>> Will Sentance: Increment, which gets stored automatically because of this new syntax class says, store it, increment in the user.prototype.increment, there it is.
 
 [00:02:32]
-There it is. And then login gets stored, user.prototype.login. And at the end of that block, you've achieved exactly the same thing in practice as we did in solution three. But, it is a little bit more like our python or other languages where we've listed all of our functions that are gonna be shared by the resulting objects that come from running user.
+And then login gets stored, user.prototype.login. And at the end of that block, you've achieved exactly the same thing in practice as we did in solution three. But it is a little bit more like our python or other languages where we've listed all of our functions that are gonna be shared by the resulting objects that come from running user.
 
 [00:02:54]
-But, it's all a mask. It's all a mask for how JavaScript's actually working under the hood. Under the hood, it's doing all of this, and it's important. There's levels of under the hood we wanna reach. There's levels that we don't wanna reach. There's levels where we don't need to go that deep because.
+But it's all a mask. It's all a mask for how JavaScript's actually working under the hood. Under the hood, it's doing all of this. And it's important. There's levels of under the hood we wanna reach. There's levels that we don't wanna reach. There's levels where we don't need to go that deep because doing so doesn't help us write cleaner, better code, easier to debug, more efficient.
 
-[00:03:15]
-Doing so doesn't help us write cleaner, better code, easier to debug, more efficient. We just don't need to know most of the time. This is a level we do need to know. if we don't realize that when we are doing this. If we think when we come to JavaScript coming from Python, that the is behaving the same as [SOUND] Python, we're gonna get incredibly upset when we discover that, actually, under the hood We have this prototype prototype property that has a bunch of shared function on it, and that's actually where our functions are.
+[00:03:22]
+We just don't need to know, most of the time. This is a level we do need to know. If we don't realize that when we are doing this, if we think when we come to JavaScript coming from Python, that they are is behaving the same as Python, we're gonna get incredibly upset when we discover that actually, under the hood, we have this prototype, prototype property that has a bunch of shared functions on it.
 
-[00:03:45]
-We're gonna get very upset when we try and understand what's happening inside the core to user with a new keyword, and it's saying this. What is this, it's this auto created object, well we want to change the product. How do we do that?
->> None of it's going to work the way we expect from other languages because it's wrapping up a prototypal language.
+[00:03:44]
+And that's actually where our functions are. We're gonna get very upset when we try and understand what's happening inside the core to user with a new keyword, and it's saying this. What is this, it's this auto created object. Well, we wanna change the product. How we do that?
 
-[00:04:07]
-Jobs are inherently a typal language. It does not behave in the typical classical style that is known from other languages. And yet, we didn't know that I guess. Maybe we do? But now. Benefits, this approach, this final version, this solution four emerging as the new standard. Feels more like the sound of other languages like Python.
+[00:04:00]
+None of it's gonna work the way we expect from other languages because it's wrapping up a prototype language. Job's inherently a prototypal language, it does not behave in the typical, classical style that it's known from other languages. And yet, we didn't know that, I guess, maybe we do?
 
-[00:04:33]
-It emulates very closely. Problems. Not even 99%, 99.9% of developers have no idea how it works, and that means it's hard to debug but its also every senior, or every VP of engineering, every senior developer's favorite itnerview question for mid and senir developers, how is the new keyword working?
+[00:04:17]
+I don't know. But now, I was gonna say, benefits this approach, this final version, this solution four emerging as the new standard. Feels more the sound of other languages like Python, it emulates very closely. Problems, I think it's not even 99%. 99.9% of developers have no idea how it works.
 
-[00:04:54]
-Well, man, one of our favorite problems is a set of codesmith in the first couple of weeks, is rebuild the new keyword for us. We have everything. We can rebuild the new keyword. We wouldn't rebuild it that way, but we can create a function that achieves the same as a new keyword, no problem now.
+[00:04:43]
+And that means it's hard to debug but its also every senior, or every VP of engineering. And every senior developer's favorite interview question for mid and senior developers, how is the new keyword working? Well, man, one of our favorite problems is a set of codesmith in the first couple of weeks, is rebuild the new keyword for us.
 
-[00:05:13]
-Because we know every single piece. Solution two was just bundled up, wrapped up, given some fancy automatons by solution three, just automated bunch of, got rid off bunch of stuff, automated it with a new keyword, these it is. And then solution four said, even that was too long winded.
+[00:05:05]
+We have everything. We can rebuild the new keyword. We wouldn't rebuild that. We can create a function that achieves the same as a new keyword, no problem now because we know every single piece. Solution two was just bundled up, wrapped up, given some fancy automations by solution three.
 
-[00:05:38]
-Let's make it even easier. Now, to find me a clause, I'll put increment and login in the prototype in user dot prototype. I'll put it in their for you. Just list them off there. I'll o it for you.
+[00:05:28]
+Got rid off bunch of stuff, automated it with a new keyword, there it is. And then solution four said, even that was too long-winded. Let's make it even easier. Now, to find me a clause, I'll put increment and login in the prototype of user.prototype. I'll put it in there for you.
+
+[00:05:50]
+Just list them off there. Just list of all the functions you want a new prototype, I'll do it for you.
 

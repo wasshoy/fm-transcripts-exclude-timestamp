@@ -1,0 +1,449 @@
+WEBVTT
+
+1
+00:00:00.740 --> 00:00:04.643
+Just like node has
+the Express web framework,
+
+2
+00:00:04.643 --> 00:00:10.180
+Dino has a web framework as well,
+and it's called Oak.
+
+3
+00:00:10.180 --> 00:00:14.820
+We would not want to implement routing and
+templates and all of the different
+
+4
+00:00:14.820 --> 00:00:18.822
+things that we need to build
+a proper web application ourselves.
+
+5
+00:00:18.822 --> 00:00:22.478
+All right, as we've already seen,
+we have to bring in URL search params and
+
+6
+00:00:22.478 --> 00:00:24.878
+we're trying to parse out
+query parameters, and
+
+7
+00:00:24.878 --> 00:00:28.330
+we're trying to return HTML, and
+then, it's just way too much work.
+
+8
+00:00:28.330 --> 00:00:31.462
+And so,
+typically we have web frameworks that
+
+9
+00:00:31.462 --> 00:00:36.110
+sit on top of things like node
+to make this easier for us.
+
+10
+00:00:36.110 --> 00:00:44.290
+And since Dino loves anagrams,
+Oak is an anagram for Koa.
+
+11
+00:00:44.290 --> 00:00:47.696
+You may have heard of Koa before,
+
+12
+00:00:47.696 --> 00:00:52.600
+the Koa project,
+if you Google it, here we go.
+
+13
+00:00:52.600 --> 00:00:57.813
+And so Koa was created by the same
+fellow who built Express,
+
+14
+00:00:57.813 --> 00:01:01.670
+and it's built on JavaScript generators,
+
+15
+00:01:01.670 --> 00:01:08.000
+which are a construct that you
+don't see very much in JavaScript.
+
+16
+00:01:08.000 --> 00:01:10.720
+I think it's something that
+never quite caught on.
+
+17
+00:01:10.720 --> 00:01:14.557
+I think we could disagree about that,
+but you just don't see them very much or
+
+18
+00:01:14.557 --> 00:01:15.572
+use them very much.
+
+19
+00:01:15.572 --> 00:01:18.790
+And so
+most people are still using Express.
+
+20
+00:01:19.950 --> 00:01:25.000
+And what I want to do is take a look at
+Express for those who are not familiar.
+
+21
+00:01:25.000 --> 00:01:28.281
+If you are familiar, very familiar with
+Express, this will be a bit of a review,
+
+22
+00:01:28.281 --> 00:01:31.380
+but for people who aren't,
+I want to take a look at it.
+
+23
+00:01:31.380 --> 00:01:36.428
+Because what we're gonna do is sort of
+
+24
+00:01:36.428 --> 00:01:41.965
+compare Oak to Express instead of to Koa.
+
+25
+00:01:41.965 --> 00:01:47.410
+But Koa looks a lot like Express,
+and Oak looks exactly like Koa.
+
+26
+00:01:47.410 --> 00:01:52.410
+The big difference is that Oak does not
+come with all the baked-in middleware that
+
+27
+00:01:52.410 --> 00:01:56.700
+Express does, it's sort of a minimal
+version of that in a lot of ways.
+
+28
+00:01:57.830 --> 00:02:03.310
+Middleware is code that is executed
+on the request to the server.
+
+29
+00:02:03.310 --> 00:02:08.140
+So the request comes in, and
+then you execute some operation on it.
+
+30
+00:02:08.140 --> 00:02:10.084
+And then you send a response, and
+
+31
+00:02:10.084 --> 00:02:14.813
+the middleware is everything that you do
+to the request as it's moving through.
+
+32
+00:02:14.813 --> 00:02:19.197
+Express also has this really nice
+scaffolding tool where it will just give
+
+33
+00:02:19.197 --> 00:02:22.872
+you an Express application with
+all of the different files and
+
+34
+00:02:22.872 --> 00:02:26.620
+the project structure and
+everything already there for you.
+
+35
+00:02:26.620 --> 00:02:32.155
+And so what I want to do is I want
+to build up with you an opinionated
+
+36
+00:02:32.155 --> 00:02:38.770
+project set up around Oak that mimics
+what you get today with Express.
+
+37
+00:02:38.770 --> 00:02:42.396
+But before we do that,
+let's look at exactly what Express does.
+
+38
+00:02:42.396 --> 00:02:47.857
+So what I'm gonna do is I'm going to
+create a new project with Express.
+
+39
+00:02:47.857 --> 00:02:49.080
+And if you have node installed,
+
+40
+00:02:49.080 --> 00:02:52.270
+this should work just fine for you, you
+don't need to have the Express generator.
+
+41
+00:02:53.310 --> 00:02:55.610
+But let's start on a new tab here.
+
+42
+00:02:55.610 --> 00:02:56.930
+Let me just go back to my home folder.
+
+43
+00:02:59.200 --> 00:03:03.765
+All right, so let's do this,
+and Windows terminal is
+
+44
+00:03:03.765 --> 00:03:08.740
+warning me because the line
+break character got copied in.
+
+45
+00:03:08.740 --> 00:03:12.262
+And so basically it's saying, hey,
+when you paste this, it's gonna execute,
+
+46
+00:03:12.262 --> 00:03:15.682
+you sure you wanna do that, in case you
+pasted something malicious, but yeah,
+
+47
+00:03:15.682 --> 00:03:17.150
+I'm fine with it.
+
+48
+00:03:17.150 --> 00:03:22.803
+So what this is gonna do is scaffold out
+a new Express app called my-express-app,
+
+49
+00:03:22.803 --> 00:03:23.782
+which it did.
+
+50
+00:03:23.782 --> 00:03:28.134
+And now it wants us to move into
+that directory which we are, and
+
+51
+00:03:28.134 --> 00:03:30.610
+do npm install which I already did.
+
+52
+00:03:30.610 --> 00:03:33.915
+I must have done it as
+part of the command here.
+
+53
+00:03:33.915 --> 00:03:35.636
+Yeah, npm install, perfect.
+
+54
+00:03:35.636 --> 00:03:39.867
+Okay so let's open this app and
+have a look at it.
+
+55
+00:03:39.867 --> 00:03:44.560
+All right,
+this is your standard Express app.
+
+56
+00:03:44.560 --> 00:03:48.570
+It's not fancy,
+it's what you get right out of the box.
+
+57
+00:03:48.570 --> 00:03:51.667
+Express generator hasn't changed much,
+it's still using var,
+
+58
+00:03:51.667 --> 00:03:54.610
+even though you don't see
+var that much anymore.
+
+59
+00:03:54.610 --> 00:03:58.030
+This is obviously node because we've got
+a lot of these require statements in here.
+
+60
+00:03:59.310 --> 00:04:02.597
+But if we take a look at
+what's happening in this file,
+
+61
+00:04:02.597 --> 00:04:07.910
+we've got a couple of routers which
+are coming from our routes folder here.
+
+62
+00:04:07.910 --> 00:04:13.270
+And we're basically telling
+the app to use these routers.
+
+63
+00:04:13.270 --> 00:04:16.941
+We've got some templates here
+in our views, using handlebars,
+
+64
+00:04:16.941 --> 00:04:18.350
+so that index template.
+
+65
+00:04:18.350 --> 00:04:21.070
+We have a layout which
+applies to every page, so
+
+66
+00:04:21.070 --> 00:04:25.050
+maybe we have a common nav
+bar that goes in the layout.
+
+67
+00:04:25.050 --> 00:04:30.490
+And then there's some other stuff,
+there's a logger and we're doing things to
+
+68
+00:04:30.490 --> 00:04:36.504
+make sure there's JSON support, working
+with cookies, then handling 404 errors.
+
+69
+00:04:36.504 --> 00:04:40.011
+And then finally over
+here in the bin folder,
+
+70
+00:04:40.011 --> 00:04:43.994
+we're actually starting
+the server get started.
+
+71
+00:04:43.994 --> 00:04:49.130
+And, of course, all this is scaffolded
+out for us, but it's actually down here.
+
+72
+00:04:49.130 --> 00:04:52.970
+Okay, so we want to execute this.
+
+73
+00:04:52.970 --> 00:04:57.677
+Remember we talked about the fact
+that node doesn't care what the file
+
+74
+00:04:57.677 --> 00:05:02.390
+extension is, or
+even if you don't have one, so that's why.
+
+75
+00:05:02.390 --> 00:05:05.640
+This has always struck me as
+being weird about Express, but
+
+76
+00:05:05.640 --> 00:05:10.210
+Express has this www file, which is
+a JavaScript file with no extension.
+
+77
+00:05:10.210 --> 00:05:12.570
+I don't know why they chose to do that.
+
+78
+00:05:12.570 --> 00:05:17.000
+But node doesn't care in the slightest,
+and we'll run this.
+
+79
+00:05:17.000 --> 00:05:18.403
+We're probably conflicting over here.
+
+80
+00:05:19.953 --> 00:05:21.059
+Let's try this again.
+
+81
+00:05:25.440 --> 00:05:29.984
+All right, let's go to localhost 3000.
+
+82
+00:05:33.838 --> 00:05:35.684
+All right, so
+this is the Express application,
+
+83
+00:05:35.684 --> 00:05:37.330
+let me back off of it a little bit.
+
+84
+00:05:37.330 --> 00:05:39.527
+This is just what you get out of the box.
+
+85
+00:05:39.527 --> 00:05:41.510
+They include a couple routes for you.
+
+86
+00:05:41.510 --> 00:05:45.104
+So there's this user's route, which
+just says respond with a resource, but
+
+87
+00:05:45.104 --> 00:05:49.460
+they're just showing you you can have
+multiple routes here, very standard stuff.
+
+88
+00:05:49.460 --> 00:05:52.660
+If you've used Express before, you're
+like, yeah, I already know all this.
+
+89
+00:05:52.660 --> 00:05:54.260
+Okay, I gotcha.
+
+90
+00:05:54.260 --> 00:05:57.603
+But the reason why I'm showing you this
+is because what I want to do is for
+
+91
+00:05:57.603 --> 00:06:01.600
+us to build up something very similar
+with Dino and see what does it look like.
+
+92
+00:06:01.600 --> 00:06:06.230
+How hard is it for us to build
+something that looks like this?
+
+93
+00:06:06.230 --> 00:06:09.333
+And what are the differences
+between doing that in node and
+
+94
+00:06:09.333 --> 00:06:12.130
+doing that with Dino, so
+let's take a look at that.
+

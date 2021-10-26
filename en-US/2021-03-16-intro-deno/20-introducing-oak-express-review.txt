@@ -1,0 +1,51 @@
+[00:00:00]
+>> Just like node has the Express web framework, Dino has a web framework as well, and it's called Oak. We would not want to implement routing and templates and all of the different things that we need to build a proper web application ourselves. All right, as we've already seen, we have to bring in URL search params and we're trying to parse out query parameters, and we're trying to return HTML, and then, it's just way too much work.
+
+[00:00:28]
+And so, typically we have web frameworks that sit on top of things like node to make this easier for us. And since Dino loves anagrams, Oak is an anagram for Koa. You may have heard of Koa before, the Koa project, if you Google it, here we go. And so Koa was created by the same fellow who built Express, and it's built on JavaScript generators, which are a construct that you don't see very much in JavaScript.
+
+[00:01:08]
+I think it's something that never quite caught on. I think we could disagree about that, but you just don't see them very much or use them very much. And so most people are still using Express. And what I want to do is take a look at Express for those who are not familiar.
+
+[00:01:25]
+If you are familiar, very familiar with Express, this will be a bit of a review, but for people who aren't, I want to take a look at it. Because what we're gonna do is sort of compare Oak to Express instead of to Koa. But Koa looks a lot like Express, and Oak looks exactly like Koa.
+
+[00:01:47]
+The big difference is that Oak does not come with all the baked-in middleware that Express does, it's sort of a minimal version of that in a lot of ways. Middleware is code that is executed on the request to the server. So the request comes in, and then you execute some operation on it.
+
+[00:02:08]
+And then you send a response, and the middleware is everything that you do to the request as it's moving through. Express also has this really nice scaffolding tool where it will just give you an Express application with all of the different files and the project structure and everything already there for you.
+
+[00:02:26]
+And so what I want to do is I want to build up with you an opinionated project set up around Oak that mimics what you get today with Express. But before we do that, let's look at exactly what Express does. So what I'm gonna do is I'm going to create a new project with Express.
+
+[00:02:47]
+And if you have node installed, this should work just fine for you, you don't need to have the Express generator. But let's start on a new tab here. Let me just go back to my home folder. All right, so let's do this, and Windows terminal is warning me because the line break character got copied in.
+
+[00:03:08]
+And so basically it's saying, hey, when you paste this, it's gonna execute, you sure you wanna do that, in case you pasted something malicious, but yeah, I'm fine with it. So what this is gonna do is scaffold out a new Express app called my-express-app, which it did. And now it wants us to move into that directory which we are, and do npm install which I already did.
+
+[00:03:30]
+I must have done it as part of the command here. Yeah, npm install, perfect. Okay so let's open this app and have a look at it. All right, this is your standard Express app. It's not fancy, it's what you get right out of the box. Express generator hasn't changed much, it's still using var, even though you don't see var that much anymore.
+
+[00:03:54]
+This is obviously node because we've got a lot of these require statements in here. But if we take a look at what's happening in this file, we've got a couple of routers which are coming from our routes folder here. And we're basically telling the app to use these routers.
+
+[00:04:13]
+We've got some templates here in our views, using handlebars, so that index template. We have a layout which applies to every page, so maybe we have a common nav bar that goes in the layout. And then there's some other stuff, there's a logger and we're doing things to make sure there's JSON support, working with cookies, then handling 404 errors.
+
+[00:04:36]
+And then finally over here in the bin folder, we're actually starting the server get started. And, of course, all this is scaffolded out for us, but it's actually down here. Okay, so we want to execute this. Remember we talked about the fact that node doesn't care what the file extension is, or even if you don't have one, so that's why.
+
+[00:05:02]
+This has always struck me as being weird about Express, but Express has this www file, which is a JavaScript file with no extension. I don't know why they chose to do that. But node doesn't care in the slightest, and we'll run this. We're probably conflicting over here. Let's try this again.
+
+[00:05:25]
+All right, let's go to localhost 3000. All right, so this is the Express application, let me back off of it a little bit. This is just what you get out of the box. They include a couple routes for you. So there's this user's route, which just says respond with a resource, but they're just showing you you can have multiple routes here, very standard stuff.
+
+[00:05:49]
+If you've used Express before, you're like, yeah, I already know all this. Okay, I gotcha. But the reason why I'm showing you this is because what I want to do is for us to build up something very similar with Dino and see what does it look like. How hard is it for us to build something that looks like this?
+
+[00:06:06]
+And what are the differences between doing that in node and doing that with Dino, so let's take a look at that.
+

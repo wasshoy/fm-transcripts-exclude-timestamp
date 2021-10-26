@@ -1,0 +1,560 @@
+WEBVTT
+
+1
+00:00:00.110 --> 00:00:04.941
+So in this next section, what I'd like to
+do is walk through building something.
+
+2
+00:00:04.941 --> 00:00:08.988
+And I figured that the best thing to walk
+you building is sort of a simple web
+
+3
+00:00:08.988 --> 00:00:09.520
+server.
+
+4
+00:00:09.520 --> 00:00:12.972
+We tend to use node and
+JavaScript a lot to do web type things, so
+
+5
+00:00:12.972 --> 00:00:16.967
+that seems like a natural place to start
+and the deno docs do this as well.
+
+6
+00:00:16.967 --> 00:00:20.839
+Although the deno docs will focus
+on like a TCP server as well,
+
+7
+00:00:20.839 --> 00:00:23.674
+which is something that
+you can telnet into.
+
+8
+00:00:23.674 --> 00:00:30.116
+So we're just gonna focus on the web
+scenario here, and build from there.
+
+9
+00:00:30.116 --> 00:00:34.678
+So, this is sort of the first
+time that we're gonna get to use
+
+10
+00:00:34.678 --> 00:00:38.624
+the deno standard library
+in any sort of depth here.
+
+11
+00:00:38.624 --> 00:00:42.892
+So let me do this, let's go ahead and
+kick out all of the changes, and
+
+12
+00:00:42.892 --> 00:00:46.510
+I'm gonna switch my branch
+over &gt; Discard all the Files.
+
+13
+00:00:49.484 --> 00:00:54.138
+And then let me switch my branch to
+building up a simple web server.
+
+14
+00:00:56.582 --> 00:01:00.364
+All right, so
+we should have an empty app.ts file.
+
+15
+00:01:00.364 --> 00:01:05.913
+So what we wanna do here is
+first we're going to bring
+
+16
+00:01:05.913 --> 00:01:11.346
+in the deno standard library server,
+web server.
+
+17
+00:01:11.346 --> 00:01:13.520
+So I'm just gonna import that here.
+
+18
+00:01:13.520 --> 00:01:16.548
+And then you should be used to seeing this
+where we get this squiggly because it
+
+19
+00:01:16.548 --> 00:01:17.303
+wants us to fetch.
+
+20
+00:01:17.303 --> 00:01:20.282
+And so we're gonna fetch the module, and
+
+21
+00:01:20.282 --> 00:01:24.805
+then that should give us some
+intellicense here, there we go.
+
+22
+00:01:24.805 --> 00:01:29.832
+All right, so what we want to do is
+create this web server here based on
+
+23
+00:01:29.832 --> 00:01:34.788
+this serve object that we've
+imported from the standard library.
+
+24
+00:01:34.788 --> 00:01:37.101
+And if we were to look there's
+some other things in here.
+
+25
+00:01:37.101 --> 00:01:41.601
+There's some decodeURI components,
+some other stuff that we could use, but
+
+26
+00:01:41.601 --> 00:01:43.926
+all we really need is this serve object.
+
+27
+00:01:43.926 --> 00:01:46.310
+That's what we'll stick with.
+
+28
+00:01:46.310 --> 00:01:53.152
+The next thing that we're going to want
+to do here is define a port and a host.
+
+29
+00:01:53.152 --> 00:01:57.789
+So we'll just do const PORT = 3000.
+
+30
+00:01:57.789 --> 00:01:59.925
+We'll run a PORT 3000.
+
+31
+00:01:59.925 --> 00:02:02.684
+And let's do const HOSTNAME.
+
+32
+00:02:02.684 --> 00:02:06.236
+And then we're gonna set this equal to,
+we could do like local host.
+
+33
+00:02:06.236 --> 00:02:11.457
+We could do 127.0.0.1 but
+it's actually better to do this,
+
+34
+00:02:11.457 --> 00:02:15.528
+which I just called the doughnuts,
+0.0.0.0,
+
+35
+00:02:15.528 --> 00:02:19.260
+which is basically the same
+thing as a local host.
+
+36
+00:02:19.260 --> 00:02:22.261
+Now, but it works better
+with containers with docker.
+
+37
+00:02:22.261 --> 00:02:24.611
+So it's sort of the same thing.
+
+38
+00:02:24.611 --> 00:02:28.708
+It's just like saying localhost,
+but it's the four doughnuts.
+
+39
+00:02:28.708 --> 00:02:33.674
+And then what we're gonna want to do is
+tell our server to basically to listen.
+
+40
+00:02:33.674 --> 00:02:38.557
+So we're gonna create a server,
+.const server = serve.
+
+41
+00:02:38.557 --> 00:02:42.792
+And then the server, as you can
+see here with our typescript, and
+
+42
+00:02:42.792 --> 00:02:45.718
+once either an address or
+port and hostname,
+
+43
+00:02:45.718 --> 00:02:50.037
+so let's do options and
+look at what our options are with control.
+
+44
+00:02:50.037 --> 00:02:55.243
+Oops, control support,
+support 3000, reset that support,
+
+45
+00:02:55.243 --> 00:02:58.911
+and then you can see
+hostname here is optional.
+
+46
+00:02:58.911 --> 00:03:03.175
+I assume it defaults to localhost, but
+we'll set the hostname here as well.
+
+47
+00:03:03.175 --> 00:03:05.555
+And we're just referencing
+these constants.
+
+48
+00:03:05.555 --> 00:03:09.281
+And then what we need to do
+now is we need to listen for
+
+49
+00:03:09.281 --> 00:03:12.062
+incoming requests to the web server.
+
+50
+00:03:12.062 --> 00:03:17.074
+And to do that,
+Deno uses this sort of strange for
+
+51
+00:03:17.074 --> 00:03:20.743
+away const request of server loop,
+
+52
+00:03:20.743 --> 00:03:24.779
+which looks like an infinite loop, but
+
+53
+00:03:24.779 --> 00:03:31.899
+this is how you start the server and
+listen for requests that come in.
+
+54
+00:03:31.899 --> 00:03:37.107
+So we're awaiting this server object for
+any request that comes in.
+
+55
+00:03:37.107 --> 00:03:39.975
+Every time one comes in
+we want to do something.
+
+56
+00:03:39.975 --> 00:03:47.566
+And to handle that,
+what we can do is say req.respond.
+
+57
+00:03:47.566 --> 00:03:50.152
+And then, let's see here.
+
+58
+00:03:50.152 --> 00:03:55.360
+Inside here we have a response object,
+again utilizing our typescript,
+
+59
+00:03:55.360 --> 00:03:58.469
+and we can set the body
+equal to Hello world.
+
+60
+00:03:58.469 --> 00:04:00.995
+We've done a lot of Hello world today.
+
+61
+00:04:00.995 --> 00:04:05.273
+And then let's go ahead and save that and
+our format is working nicely,
+
+62
+00:04:05.273 --> 00:04:06.567
+which is wonderful.
+
+63
+00:04:06.567 --> 00:04:11.398
+Okay, so considering, or assuming
+that we've done everything correctly,
+
+64
+00:04:11.398 --> 00:04:16.682
+that I've done everything correctly, we
+should have a very simple web server here.
+
+65
+00:04:16.682 --> 00:04:18.324
+Let's get out of this.
+
+66
+00:04:20.763 --> 00:04:22.958
+So let's just try to fire it up and
+see what happens.
+
+67
+00:04:22.958 --> 00:04:24.401
+Let me just make sure I'm
+in the right folder I am.
+
+68
+00:04:24.401 --> 00:04:28.027
+So app run, and then I want to
+show you all a shortcut here so
+
+69
+00:04:28.027 --> 00:04:31.357
+that we don't have to keep
+passing in over and over and
+
+70
+00:04:31.357 --> 00:04:35.804
+over again this like allow net,
+allow read, allow this, allow that.
+
+71
+00:04:35.804 --> 00:04:39.706
+We can just do -A, which basically
+means just opt out of all the security.
+
+72
+00:04:39.706 --> 00:04:42.960
+Don't ask, don't block anything,
+just let everything go.
+
+73
+00:04:42.960 --> 00:04:46.741
+So this is basically like passing
+in every allow flag possible.
+
+74
+00:04:46.741 --> 00:04:50.633
+So we're gonna allow,
+and then let's patch,
+
+75
+00:04:50.633 --> 00:04:55.790
+let's do watch an unstable because
+we need that with a watch and
+
+76
+00:04:55.790 --> 00:05:01.947
+then we'll run app.Ts, deno,
+app run this on app run is deno run, deno.
+
+77
+00:05:01.947 --> 00:05:03.962
+Deno run.
+
+78
+00:05:03.962 --> 00:05:05.785
+I'm still learning how to say it.
+
+79
+00:05:05.785 --> 00:05:09.039
+Okay, so it's running, but
+we don't know where it's running,
+
+80
+00:05:09.039 --> 00:05:10.501
+which isn't super helpful.
+
+81
+00:05:10.501 --> 00:05:13.925
+So let's do this.
+
+82
+00:05:13.925 --> 00:05:18.767
+Console.log("server now running
+
+83
+00:05:18.767 --> 00:05:23.762
+at http://") and check this out.
+
+84
+00:05:23.762 --> 00:05:27.726
+I have this really cool
+extension called the strain.
+
+85
+00:05:27.726 --> 00:05:31.601
+What is it called?
+It's called string, template converters,
+
+86
+00:05:31.601 --> 00:05:34.933
+template string converter
+is the name of it.
+
+87
+00:05:37.949 --> 00:05:38.549
+This is for free.
+
+88
+00:05:38.549 --> 00:05:40.554
+Does not have anything to do with deno,
+but
+
+89
+00:05:40.554 --> 00:05:44.192
+it's this really cool extension written
+by Megan who's on the VS code team.
+
+90
+00:05:44.192 --> 00:05:45.142
+Watch what it does.
+
+91
+00:05:45.142 --> 00:05:48.084
+It's so simple but it's so awesome.
+
+92
+00:05:48.084 --> 00:05:53.100
+When you use the template
+literal syntax watch the quotes.
+
+93
+00:05:53.100 --> 00:05:57.210
+It automatically converts the double
+quotes to backticks, right?
+
+94
+00:05:57.210 --> 00:06:00.468
+So cool, one of my favorite extensions.
+
+95
+00:06:00.468 --> 00:06:01.799
+It doesn't have to be,
+
+96
+00:06:01.799 --> 00:06:05.467
+doesn't have to do anything really
+cool to be super beneficial.
+
+97
+00:06:05.467 --> 00:06:07.256
+So thank you Megan for that.
+
+98
+00:06:07.256 --> 00:06:11.305
+All right, so we're just gonna do that our
+server is running here and server is now
+
+99
+00:06:11.305 --> 00:06:15.492
+running, and then because we've got the VS
+code terminal, we can just click here.
+
+100
+00:06:15.492 --> 00:06:18.953
+And we should, there we go, okay.
+
+101
+00:06:18.953 --> 00:06:22.135
+So, we have a simple web server.
+
+102
+00:06:22.135 --> 00:06:25.836
+Very nice, I know everybody's
+super impressed, hello world.
+
+103
+00:06:25.836 --> 00:06:30.933
+All right, so that's our web server here.
+
+104
+00:06:30.933 --> 00:06:37.140
+By the way, if we were going to
+specifically allow only local hosts,
+
+105
+00:06:37.140 --> 00:06:41.421
+then we would pass this
+address to allow net, so
+
+106
+00:06:41.421 --> 00:06:46.793
+the allowed net equals https://0000:3000.
+
+107
+00:06:46.793 --> 00:06:51.467
+And we could allow just that, but
+we're allowing everything with the -A.
+
+108
+00:06:51.467 --> 00:06:57.012
+So let's talk about, so
+instead what we could do is,
+
+109
+00:06:57.012 --> 00:07:02.697
+instead of returning this,
+let's return some HTML.
+
+110
+00:07:02.697 --> 00:07:05.782
+So let's do this, Hello world.
+
+111
+00:07:09.343 --> 00:07:14.937
+Okay, And then our watch changes.
+
+112
+00:07:14.937 --> 00:07:16.672
+Let's go over here.
+
+113
+00:07:16.672 --> 00:07:21.515
+We'll refresh, and now we have some actual
+HTML, which, if you didn't know you can do
+
+114
+00:07:21.515 --> 00:07:26.302
+that you can, you don't actually need to
+return a properly formatted HTML document.
+
+115
+00:07:26.302 --> 00:07:30.806
+The browser's smart enough to figure
+that out so you can just give it an H1.
+
+116
+00:07:30.806 --> 00:07:35.815
+Okay, but
+that's no way to build a web server,
+
+117
+00:07:35.815 --> 00:07:39.709
+can't just return HTML on the body.
+
+118
+00:07:39.709 --> 00:07:43.937
+So let's look at some common things that
+we would do with a web server other than
+
+119
+00:07:43.937 --> 00:07:46.960
+just returning text which
+is not terribly impressive.
+
