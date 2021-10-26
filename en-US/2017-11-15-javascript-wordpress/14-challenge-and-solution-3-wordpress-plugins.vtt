@@ -47,42 +47,43 @@ them in your theme's folder,
 paste them into your plugins folder.
 
 11
-00:00:43.380 --> 00:00:43.993
+00:00:43.380 --> 00:00:46.602
 &gt;&gt; Zac Gordon: Okay, so
+now you should have all of those there and
 
 12
-00:00:43.993 --> 00:00:48.905
-now you should have all of those there and
-we're going to close out the themes
+00:00:46.602 --> 00:00:50.594
+we're going to close out
+the themes that we're editing, and
 
 13
-00:00:48.905 --> 00:00:53.896
-that we're editing, and let's drag our
-whole plugins folder into our theme
+00:00:50.594 --> 00:00:54.543
+let's drag our whole plugins
+folder into our theme editor.
 
 14
-00:00:53.896 --> 00:01:01.137
-editor.
+00:01:00.835 --> 00:01:03.182
 &gt;&gt; Zac Gordon: So,
-
-15
-00:01:01.137 --> 00:01:03.182
 we've got that code ready, and
 
-16
+15
 00:01:03.182 --> 00:01:06.780
 now I need to mention something
 about it on the backend.
 
-17
-00:01:06.780 --> 00:01:16.616
+16
+00:01:06.780 --> 00:01:08.150
 So, there's a page for plugins.
+
+17
+00:01:16.337 --> 00:01:18.221
 &gt;&gt; Zac Gordon: When
+you're working on these,
 
 18
-00:01:16.616 --> 00:01:21.090
-you're working on these, please don't
-leave them all activated at once.
+00:01:18.221 --> 00:01:21.090
+please don't leave them
+all activated at once.
 
 19
 00:01:21.090 --> 00:01:25.190
@@ -117,176 +118,173 @@ deactivate it like that, and
 then go onto 2.2, okay?
 
 26
-00:01:45.757 --> 00:01:48.011
+00:01:45.757 --> 00:01:50.364
 So, everybody go ahead and
+activate 2.1 right now.
 
 27
-00:01:48.011 --> 00:01:53.053
-activate 2.1 right now.
-&gt;&gt; Zac Gordon: And
+00:01:52.838 --> 00:01:56.783
+&gt;&gt; Zac Gordon: And then, in our 2.1 JS
+folder, we're going to come down into
 
 28
-00:01:53.053 --> 00:01:57.643
-then, in our 2.1 JS folder, we're going
-to come down into the read me and
-
-29
-00:01:57.643 --> 00:02:00.258
+00:01:56.783 --> 00:02:00.258
+the read me and
 just look at the instructions real quick.
 
-30
+29
 00:02:00.258 --> 00:02:06.330
 Okay, so we're going to open up a file
 called somethingPHP frontend.js-js,
 
-31
+30
 00:02:06.330 --> 00:02:09.380
 and then we're looking for nq scripts.
 
-32
+31
 00:02:09.380 --> 00:02:14.130
 Okay, we know what that is, and
 then we want to just change the file name,
 
-33
+32
 00:02:14.130 --> 00:02:16.630
 and then pass in file.
 
-34
+33
 00:02:16.630 --> 00:02:17.530
 That's it.
 
-35
+34
 00:02:17.530 --> 00:02:19.137
 Okay, let's check that up.
 
-36
+35
 00:02:19.137 --> 00:02:22.357
 So, if I come in to my
 jsforwpfrontend.php,
 
-37
+36
 00:02:22.357 --> 00:02:25.336
 this is the information about the plugin.
 
-38
+37
 00:02:25.336 --> 00:02:29.630
 And then remember, like I said,
 sometimes WordPress will have
 
-39
+38
 00:02:29.630 --> 00:02:34.577
 conditional code at the beginning that
 will exit out of all the rest of it.
 
-40
+39
 00:02:34.577 --> 00:02:38.924
 So, if somebody is trying to access this
 plugin directly, it will tell on, hey,
 
-41
+40
 00:02:38.924 --> 00:02:41.130
 you don't have access and take them out.
 
-42
+41
 00:02:43.230 --> 00:02:48.250
 Okay, so change path to file.js to
 
-43
+42
 00:02:48.250 --> 00:02:52.980
 use plug ins URL and
 then pass it to parameters.
 
-44
+43
 00:02:52.980 --> 00:02:56.040
 This is going to be my first, and
 this is going to be my second.
 
-45
+44
 00:02:57.040 --> 00:03:02.075
 Okay, so I'm going to delete this
 code here This code right here,
 
-46
+45
 00:03:02.075 --> 00:03:05.355
 delete that and say,
 
-47
+46
 00:03:05.355 --> 00:03:10.220
 plugins_url and it's gonna take two
 parameters and we'll do this easy way.
 
-48
+47
 00:03:10.220 --> 00:03:15.011
 We'll just copy this code,
 &gt;&gt; Zac Gordon: Paste it in and then
 
-49
+48
 00:03:15.011 --> 00:03:19.720
 copy FILE and it's a second parameter,
 so they need to be comma separated.
 
-50
+49
 00:03:19.720 --> 00:03:22.750
 So you need a comma right here And
 then file.
 
-51
+50
 00:03:24.080 --> 00:03:28.130
 Okay, I'm not trying to make your lives
 difficult, but this is the convention.
 
-52
+51
 00:03:28.130 --> 00:03:30.840
 Again, this is something that
 needs to become second nature.
 
-53
+52
 00:03:30.840 --> 00:03:34.670
 You need to be able to like remember okay
 I've got plug ins url, I put this in here,
 
-54
+53
 00:03:34.670 --> 00:03:35.940
 I put that in there.
 
-55
+54
 00:03:35.940 --> 00:03:37.040
 And, from there, I'm going.
 
-56
+55
 00:03:37.040 --> 00:03:41.150
 And, for now, if we, we should be
 able to just come to our site.
 
-57
+56
 00:03:41.150 --> 00:03:42.190
 The plug in is activated.
 
-58
+57
 00:03:45.480 --> 00:03:47.840
 Notice, I still have my
 JavaScript from before.
 
-59
+58
 00:03:47.840 --> 00:03:50.150
 But now I've got plug in JS loaded.
 
-60
+59
 00:03:50.150 --> 00:03:51.250
 Sweet.
 That's perfect.
 
-61
+60
 00:03:51.250 --> 00:03:56.650
 And it's coming from my main JS file,
 which is inside of my assets.
 
-62
+61
 00:03:56.650 --> 00:03:57.890
 JS main right here.
 
-63
+62
 00:03:59.110 --> 00:04:00.280
 Plug in JS loaded, okay
 

@@ -111,14 +111,13 @@ get it off the page and
 it's your own code.
 
 24
-00:01:21.860 --> 00:01:27.827
+00:01:21.860 --> 00:01:23.394
 All right, so.
-&gt;&gt; Zac Gordon: All right,
 
 25
-00:01:27.827 --> 00:01:32.450
-last exercise, and
-this is super important.
+00:01:26.644 --> 00:01:32.450
+&gt;&gt; Zac Gordon: All right, last exercise,
+and this is super important.
 
 26
 00:01:32.450 --> 00:01:34.390
@@ -243,130 +242,128 @@ I'm going to come in and do 1.6
 Looks like I broke something,
 
 52
-00:03:17.765 --> 00:03:23.890
+00:03:17.765 --> 00:03:21.259
 sorry, one second.
-&gt;&gt; Audience Member: Is
 
 53
-00:03:23.890 --> 00:03:27.460
-it maybe not on the complete one?
-&gt;&gt; Zac Gordon: That's it, thank you sir.
+00:03:23.790 --> 00:03:26.090
+&gt;&gt; Audience Member: Is it
+maybe not on the complete one?
 
 54
+00:03:26.090 --> 00:03:27.460
+&gt;&gt; Zac Gordon: That's it, thank you sir.
+
+55
 00:03:28.590 --> 00:03:30.340
 Okay, Line 16.
 
-55
+56
 00:03:32.810 --> 00:03:38.995
 Okay, thank you.
 
-56
+57
 00:03:38.995 --> 00:03:42.395
 Okay, 116 is loaded,
 let's see we should get our site now.
 
-57
+58
 00:03:42.395 --> 00:03:47.175
 Okay, and now notice,
 down here in the console, I'll start in
 
-58
+59
 00:03:49.795 --> 00:03:56.580
 the theme.js So in my theme.js I
 now have access to jsfawrp_vars,
 
-59
+60
 00:03:56.580 --> 00:04:04.490
 again this is exactly what I named in my
 functions.PHP down here jsfawrp_vars.
 
-60
+61
 00:04:04.490 --> 00:04:08.210
 And then whatever the property is
 that I set so the site URL and
 
-61
+62
 00:04:08.210 --> 00:04:10.170
 the site name are the two one's.
 
-62
+63
 00:04:10.170 --> 00:04:14.560
 And then when we load this,
 we're going to see this data.
 
-63
+64
 00:04:14.560 --> 00:04:16.400
 Again not the original use case but
 
-64
+65
 00:04:16.400 --> 00:04:19.780
 this is how we're gonna pass
 things like nonsenses and
 
-65
+66
 00:04:19.780 --> 00:04:24.440
 the URL to access the API correctly
 into our java script and get that.
 
-66
+67
 00:04:24.440 --> 00:04:29.590
 That's probably the most common
 things we'll be using it for, so For
 
-67
+68
 00:04:29.590 --> 00:04:33.570
 authenticating and for
 getting dynamic data that we need.
 
-68
+69
 00:04:33.570 --> 00:04:34.070
 Okay?
 
-69
+70
 00:04:35.870 --> 00:04:37.510
 So that pretty much wraps it up now.
 
-70
-00:04:37.510 --> 00:04:40.090
-I think we fielded about
-all the questions we have,
-
 71
-00:04:40.090 --> 00:04:41.610
-so if there's any?
-&gt;&gt; Audience Member: Well,
+00:04:37.510 --> 00:04:41.440
+I think we fielded about all
+the questions we have, so if there's any?
 
 72
-00:04:41.610 --> 00:04:42.840
+00:04:41.440 --> 00:04:42.530
+&gt;&gt; Audience Member: Well,
 there's one question.
-&gt;&gt; Zac Gordon: Is there?
 
 73
-00:04:42.840 --> 00:04:44.190
+00:04:42.530 --> 00:04:43.670
+&gt;&gt; Zac Gordon: Is there?
 Okay.
-&gt;&gt; Audience Member: Yeah,
 
 74
-00:04:44.190 --> 00:04:47.670
-from the chat just looking
-to see if there's a theme.
+00:04:43.670 --> 00:04:47.670
+&gt;&gt; Audience Member: Yeah, from the chat
+just looking to see if there's a theme.
 
 75
 00:04:47.670 --> 00:04:49.770
 That uses View that you can think of.
 
 76
-00:04:49.770 --> 00:04:54.390
+00:04:49.770 --> 00:04:51.210
 Do you have an example?
-&gt;&gt; Zac Gordon: Let me come back to that
 
 77
-00:04:54.390 --> 00:04:57.970
-later cuz I'm actually going to,
-when we get in a little bit further,
+00:04:52.910 --> 00:04:56.070
+&gt;&gt; Zac Gordon: Let me come back to
+that later cuz I'm actually going to,
 
 78
-00:04:57.970 --> 00:04:59.570
+00:04:56.070 --> 00:04:59.570
+when we get in a little bit further,
 I have a View demo.
 
 79
@@ -389,13 +386,13 @@ people doing small stuff with Vue.
 I know a good one.
 
 83
-00:05:12.690 --> 00:05:19.196
+00:05:12.690 --> 00:05:16.907
 Go to xwp.co.
-&gt;&gt; Zac Gordon: xwp
 
 84
-00:05:19.196 --> 00:05:21.938
-is one of the WordPress VIP shops, and
+00:05:18.939 --> 00:05:21.938
+&gt;&gt; Zac Gordon: xwp is one of
+the WordPress VIP shops, and
 
 85
 00:05:21.938 --> 00:05:27.010

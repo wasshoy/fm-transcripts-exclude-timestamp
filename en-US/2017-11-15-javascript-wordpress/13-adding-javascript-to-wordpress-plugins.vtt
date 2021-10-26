@@ -47,18 +47,17 @@ This should look very familiar, right?
 What's the one thing that's different?
 
 11
-00:00:26.310 --> 00:00:31.379
+00:00:26.310 --> 00:00:28.361
 I'll give you a hint, it's in bold.
-&gt;&gt; Zac Gordon: Remember
 
 12
-00:00:31.379 --> 00:00:35.658
-last time it was something like
-something something URIs, scripts,
+00:00:30.798 --> 00:00:35.005
+&gt;&gt; Zac Gordon: Remember last time it was
+something like something something URIs,
 
 13
-00:00:35.658 --> 00:00:38.861
-child's template,
+00:00:35.005 --> 00:00:38.861
+scripts, child's template,
 something like that, right?
 
 14
@@ -216,19 +215,19 @@ then we just concatenate
 the strings together.
 
 46
-00:02:35.510 --> 00:02:39.247
+00:02:35.510 --> 00:02:39.865
 So, top level page is gonna be
-the exact same thing as we saw
+the exact same thing as we saw before.
 
 47
-00:02:39.247 --> 00:02:44.539
-before.
+00:02:43.775 --> 00:02:45.537
 &gt;&gt; Zac Gordon: It's the exact
+same thing as this,
 
 48
-00:02:44.539 --> 00:02:48.429
-same thing as this, it's just being
-abstracted out into it's own variable.
+00:02:45.537 --> 00:02:48.429
+it's just being abstracted
+out into it's own variable.
 
 49
 00:02:49.730 --> 00:02:52.656

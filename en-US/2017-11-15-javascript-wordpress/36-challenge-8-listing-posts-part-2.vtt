@@ -129,18 +129,18 @@ But your request will fail
 if you're not on HTTPS.
 
 28
-00:01:29.880 --> 00:01:34.210
-And the same is true although it
-will happen automatically when you
+00:01:29.880 --> 00:01:34.751
+And the same is true although it will
+happen automatically when you run your
 
 29
-00:01:34.210 --> 00:01:39.122
-run your localhost 3000.
-&gt;&gt; Zac: You
+00:01:34.751 --> 00:01:36.234
+localhost 3000.
 
 30
-00:01:39.122 --> 00:01:41.950
-will need to have http up there.
+00:01:38.854 --> 00:01:41.950
+&gt;&gt; Zac: You will need
+to have http up there.
 
 31
 00:01:41.950 --> 00:01:43.840

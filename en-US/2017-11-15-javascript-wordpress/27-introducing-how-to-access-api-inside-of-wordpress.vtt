@@ -212,159 +212,162 @@ I'm gonna copy all the files
 from section five.
 
 45
-00:02:32.217 --> 00:02:35.911
+00:02:32.217 --> 00:02:34.106
 These are all themes.
-&gt;&gt; Zac Gordon: So
 
 46
-00:02:35.911 --> 00:02:41.550
-copy these over into my themes folder
-which is starting to get out of control.
+00:02:35.745 --> 00:02:40.406
+&gt;&gt; Zac Gordon: So copy these over into my
+themes folder which is starting to get out
 
 47
+00:02:40.406 --> 00:02:41.550
+of control.
+
+48
 00:02:41.550 --> 00:02:44.940
 Side note, WordPress,
 never leave a theme or
 
-48
+49
 00:02:44.940 --> 00:02:47.680
 plugin up on your site
 that you're not using.
 
-49
+50
 00:02:47.680 --> 00:02:52.743
 Even if it's deactivated, it could
 still be potentially hazardous and
 
-50
+51
 00:02:52.743 --> 00:02:55.160
 an open security loophole.
 
-51
+52
 00:02:55.160 --> 00:02:58.850
 So if you have something that you're
 not using, deactivate it and delete it.
 
-52
+53
 00:02:58.850 --> 00:03:00.190
 Don't leave it up there, okay?
 
-53
+54
 00:03:01.290 --> 00:03:05.327
 Like this, don't launch a site with
 30 themes that you're not using.
 
-54
+55
 00:03:05.327 --> 00:03:09.020
 [LAUGH] Not the best idea, but
 for our testing, it's fine.
 
-55
+56
 00:03:09.020 --> 00:03:15.647
 So let's come in now and,
 &gt;&gt; Zac Gordon: We are looking for,
 
-56
+57
 00:03:17.987 --> 00:03:22.565
 &gt;&gt; Zac Gordon: 5.6 completed.
 
-57
-00:03:29.352 --> 00:03:31.078
-&gt;&gt; Zac Gordon: So the way this works is we
-
 58
-00:03:31.078 --> 00:03:36.181
-have a custom template in our code and
-there's a conditional statement,
+00:03:29.352 --> 00:03:33.629
+&gt;&gt; Zac Gordon: So the way this works is
+we have a custom template in our code and
 
 59
+00:03:33.629 --> 00:03:36.181
+there's a conditional statement,
+
+60
 00:03:36.181 --> 00:03:41.790
 remember I said that you could load
 JavaScript just on a certain page?
 
-60
+61
 00:03:41.790 --> 00:03:47.630
 So what I have done is I have
 come into my sample page, and
 
-61
+62
 00:03:47.630 --> 00:03:49.710
 I have assigned it this custom template.
 
-62
+63
 00:03:49.710 --> 00:03:51.540
 And I haven't showed you yet
 how to do this.
 
-63
+64
 00:03:51.540 --> 00:03:53.800
 I'm just showing you the different
 pieces of where we'll get.
 
-64
+65
 00:03:53.800 --> 00:03:59.140
 So we created a custom template
 that we've named Custom JS Page.
 
-65
+66
 00:03:59.140 --> 00:04:03.680
 And on this page we can click
 here to add a new post, and
 
-66
+67
 00:04:03.680 --> 00:04:06.860
 we have access to everything.
 
-67
+68
 00:04:06.860 --> 00:04:08.716
 We could even pull in the media library.
 
-68
+69
 00:04:17.205 --> 00:04:19.080
 &gt;&gt; Zac Gordon: And we could save it.
 
-69
+70
 00:04:19.080 --> 00:04:22.990
 We see a nice message, and
 we see the page refresh with what it is.
 
-70
+71
 00:04:22.990 --> 00:04:25.500
 We could also go in and edit something.
 
-71
+72
 00:04:25.500 --> 00:04:29.519
 So Testing 123, go ahead save it.
 
-72
+73
 00:04:29.519 --> 00:04:34.428
 See a nice little message, and
 then Testing 123 has been updated.
 
-73
+74
 00:04:34.428 --> 00:04:37.242
 And finally we could delete it,
 it will display this message,
 
-74
+75
 00:04:37.242 --> 00:04:39.135
 are you sure you want to delete this post?
 
-75
+76
 00:04:39.135 --> 00:04:43.796
 OK, and it's gone.
 
-76
+77
 00:04:43.796 --> 00:04:48.572
 So this is all being handled via
 JavaScript and the REST API, and
 
-77
+78
 00:04:48.572 --> 00:04:53.348
 I think it's giving a pretty good
 example of basic stuff that you
 
-78
+79
 00:04:53.348 --> 00:04:56.020
 may commonly need to know how to do.
 

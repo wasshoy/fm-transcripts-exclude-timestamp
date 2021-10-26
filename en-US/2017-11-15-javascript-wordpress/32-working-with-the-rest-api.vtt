@@ -645,12 +645,13 @@ And what it's gonna do is
 basically just list out.
 
 136
-00:07:55.720 --> 00:07:59.112
-&gt;&gt; Zac Gordon: The ability to show a bunch
+00:07:55.720 --> 00:08:00.499
+&gt;&gt; Zac Gordon: The ability
+to show a bunch of posts,
 
 137
-00:07:59.112 --> 00:08:03.890
-of posts, or show a single post, and
+00:08:00.499 --> 00:08:03.890
+or show a single post, and
 
 138
 00:08:03.890 --> 00:08:08.990
@@ -724,148 +725,152 @@ So if you're curious about how this works
 and how you make the API requests with
 
 153
-00:08:58.827 --> 00:09:08.456
+00:08:58.827 --> 00:09:07.309
 something like View,
-&gt;&gt; Zac Gordon: Take a look at this code
+&gt;&gt; Zac Gordon: Take
 
 154
-00:09:08.456 --> 00:09:14.273
-for a second and see if that makes sense.
-&gt;&gt; Zac Gordon: So
+00:09:07.309 --> 00:09:11.070
+a look at this code for a second and
+see if that makes sense.
 
 155
-00:09:14.273 --> 00:09:20.784
+00:09:14.100 --> 00:09:16.100
+&gt;&gt; Zac Gordon: So
 what that is saying is get
-&gt;&gt; Zac Gordon: The site URL, and
 
 156
+00:09:19.325 --> 00:09:20.784
+&gt;&gt; Zac Gordon: The site URL, and
+
+157
 00:09:20.784 --> 00:09:26.640
 you can see that we put this out by
 using the localized scripts, right?
 
-157
+158
 00:09:26.640 --> 00:09:30.257
 So that's how we get our site URL, and
 
-158
+159
 00:09:30.257 --> 00:09:35.693
 then we're getting this site URL or
 this restEnd point.
 
-159
+160
 00:09:35.693 --> 00:09:38.280
 Sorry, restEnd point is here.
 
-160
+161
 00:09:38.280 --> 00:09:41.450
 It's computed because you want
 to take your site URL and
 
-161
+162
 00:09:41.450 --> 00:09:43.141
 then add some things on to it.
 
-162
+163
 00:09:43.141 --> 00:09:46.522
 So if you had different Endpoints,
 you could set them up that way, so
 
-163
+164
 00:09:46.522 --> 00:09:48.346
 we're grabbing our restEndpoint.
 
-164
+165
 00:09:48.346 --> 00:09:53.890
 And then, when we get it back, we're
 sending this post equal to the new data.
 
-165
+166
 00:09:53.890 --> 00:09:58.607
 And this post up here,
 will refer to this, our array of posts.
 
-166
+167
 00:09:58.607 --> 00:10:01.960
 So it's just gonna get the posts and
 load them on the page.
 
-167
+168
 00:10:01.960 --> 00:10:06.545
 Really simple stuff, and again this
 just shows and why I was emphasizing
 
-168
+169
 00:10:06.545 --> 00:10:11.505
 taking a look, not just at jQuery, but
 something like axios or some of the more
 
-169
+170
 00:10:11.505 --> 00:10:16.566
 popular HTTP libraries, is that this is
 the only component that is different.
 
-170
+171
 00:10:16.566 --> 00:10:21.074
 You could build your whole reactor,
 your viewer, your angular backbone app.
 
-171
+172
 00:10:21.074 --> 00:10:25.220
 All you have to do is get those ajax calls
 right, and then load it into the page.
 
-172
+173
 00:10:25.220 --> 00:10:27.617
 So that should be something
 that you explore later.
 
-173
+174
 00:10:27.617 --> 00:10:31.037
 How many of you have played around
 with some sort of framework?
 
-174
+175
 00:10:31.037 --> 00:10:35.951
 Okay, so a good practice might be,
 if you wanted to play around with it,
 
-175
+176
 00:10:35.951 --> 00:10:37.900
 just try to list five posts.
 
-176
+177
 00:10:37.900 --> 00:10:40.911
 And then when you click on
 a post show that specific post,
 
-177
+178
 00:10:40.911 --> 00:10:42.498
 something like that, okay?
 
-178
+179
 00:10:42.498 --> 00:10:44.460
 And you can use this as a reference.
 
-179
+180
 00:10:44.460 --> 00:10:47.302
 And again, this is really the only
 code that's gonna change, and
 
-180
+181
 00:10:47.302 --> 00:10:49.787
 then it just plugs in,
 that's going to stay the same, and
 
-181
+182
 00:10:49.787 --> 00:10:51.589
 the rest just plugs into your framework.
 
-182
+183
 00:10:51.589 --> 00:10:55.404
 So that's an example there for you, we
 won't really go into it further, but when
 
-183
+184
 00:10:55.404 --> 00:10:59.190
 you get there and you're ready for it,
 it'll make a lot of sense and be helpful.
