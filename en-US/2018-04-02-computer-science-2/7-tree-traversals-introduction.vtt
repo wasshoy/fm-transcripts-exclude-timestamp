@@ -66,14 +66,13 @@ I talk a lot about it in
 part one of this course.
 
 15
-00:00:59.056 --> 00:01:02.762
+00:00:59.056 --> 00:00:59.800
 A lot.
-&gt;&gt; Brian Holt: There's
 
 16
-00:01:02.762 --> 00:01:07.280
-binary search trees and
-then ABL trees and all that stuff.
+00:01:02.112 --> 00:01:07.280
+&gt;&gt; Brian Holt: There's binary search trees
+and then ABL trees and all that stuff.
 
 17
 00:01:07.280 --> 00:01:11.630
@@ -81,167 +80,164 @@ So, what you have here pictured in
 front of you is a binary search tree.
 
 18
-00:01:11.630 --> 00:01:13.071
+00:01:11.630 --> 00:01:13.920
 I got this graphic off Wikipedia,
+thanks Wikipedia.
 
 19
-00:01:13.071 --> 00:01:17.682
-thanks Wikipedia.
+00:01:16.876 --> 00:01:19.990
 &gt;&gt; Brian Holt: The basic gist
-
-20
-00:01:17.682 --> 00:01:19.990
 is that you have a node, right?
 
-21
+20
 00:01:19.990 --> 00:01:23.220
 Every one of these circles
 is considered a node, right?
 
-22
+21
 00:01:23.220 --> 00:01:25.910
 This node has a value, right?
 
-23
+22
 00:01:25.910 --> 00:01:28.090
 And it has a left child and a right child.
 
-24
+23
 00:01:29.630 --> 00:01:34.240
 Now because this is a binary search tree,
 That specific thing,
 
-25
+24
 00:01:34.240 --> 00:01:36.050
 binary search tree, also known as BST.
 
-26
+25
 00:01:36.050 --> 00:01:39.740
 So if I say BST, we'll try not to but
 it just comes out sometimes.
 
-27
+26
 00:01:41.460 --> 00:01:44.720
 Binary search trees have special
 properties in the sense that everything in
 
-28
+27
 00:01:44.720 --> 00:01:48.730
 the left sub tree,
 if we're talking about eight right here,
 
-29
+28
 00:01:48.730 --> 00:01:51.230
 everything in this part of the tree.
 
-30
+29
 00:01:51.230 --> 00:01:54.160
 Also known as a subtree,
 because this is still a tree right?
 
-31
+30
 00:01:54.160 --> 00:02:00.190
 If I take off everything over here
 it's still valid tree, right?
 
-32
+31
 00:02:00.190 --> 00:02:03.960
 So everything in the left
 sub-tree is smaller
 
-33
+32
 00:02:03.960 --> 00:02:07.340
 than eight everything in the right
 sub-tree is larger than eight and
 
-34
+33
 00:02:07.340 --> 00:02:10.280
 that's always true for
 everything in the tree right?
 
-35
+34
 00:02:10.280 --> 00:02:13.079
 So if we go down to six, everything
 in the left sub-tree is smaller,
 
-36
+35
 00:02:13.079 --> 00:02:14.996
 everything in the right
 sub-tree is bigger.
 
-37
+36
 00:02:14.996 --> 00:02:16.365
 Right, we follow?
 
-38
+37
 00:02:16.365 --> 00:02:17.389
 Cool.
 
-39
+38
 00:02:17.389 --> 00:02:21.580
 That's it,
 that's all a binary search tree is.
 
-40
+39
 00:02:21.580 --> 00:02:24.680
 They call it a binary search tree
 because- binary, it has two children.
 
-41
+40
 00:02:24.680 --> 00:02:28.100
 Because there are trees that
 have more than two children.
 
-42
+41
 00:02:28.100 --> 00:02:31.700
 At most two children, I should say.
 
-43
+42
 00:02:31.700 --> 00:02:35.880
 And then it's a search tree because it's
 designed to be very searchable right?
 
-44
+43
 00:02:35.880 --> 00:02:37.550
 So if I am looking for seven,
 
-45
+44
 00:02:37.550 --> 00:02:40.350
 I don't have to go through everything
 in the array to get to seven.
 
-46
+45
 00:02:40.350 --> 00:02:44.550
 I can just go through some of
 them also known as log end.
 
-47
+46
 00:02:44.550 --> 00:02:46.220
 Right?
 That's where the log end parts
 
-48
+47
 00:02:46.220 --> 00:02:47.050
 come into it.
 
-49
+48
 00:02:47.050 --> 00:02:48.720
 If we are talking about Big O.
 
-50
+49
 00:02:48.720 --> 00:02:52.100
 Which if you don't know about Big O,
 again please go watch the other parts.
 
-51
+50
 00:02:52.100 --> 00:02:53.250
 Because I talk a lot about that.
 
-52
+51
 00:02:54.450 --> 00:02:55.030
 Okay.
 
-53
+52
 00:02:55.030 --> 00:02:56.730
 Questions about BSTs before we move on?
 

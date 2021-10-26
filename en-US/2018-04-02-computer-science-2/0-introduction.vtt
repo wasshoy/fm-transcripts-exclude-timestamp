@@ -348,208 +348,201 @@ it's like I'm gonna teach everyone how
 to pass your damn interviews [LAUGH].
 
 75
-00:04:40.666 --> 00:04:42.190
+00:04:40.666 --> 00:04:42.365
 &gt;&gt; Speaker 2: [LAUGH]
+&gt;&gt; Brian Holt: So
 
 76
-00:04:42.190 --> 00:04:43.502
-&gt;&gt; Brian Holt: So that's kind of
+00:04:42.365 --> 00:04:45.430
+that's kind of the kind of the idea here.
 
 77
-00:04:43.502 --> 00:04:45.430
-the kind of the idea here.
-
-78
 00:04:48.040 --> 00:04:52.258
 Yeah stupid gate keeping, I can't stand
 that people ask some of these questions.
 
-79
+78
 00:04:52.258 --> 00:04:57.185
 But now you're gonna be able to pass
 them so screw them, okay, I'm not upset.
 
-80
-00:04:57.185 --> 00:04:59.298
+79
+00:04:57.185 --> 00:05:01.192
 &gt;&gt; Speaker 2: [LAUGH]
+&gt;&gt; Brian Holt: This course is entirely in
+
+80
+00:05:01.192 --> 00:05:02.230
+JavaScript.
 
 81
-00:04:59.298 --> 00:05:01.020
-&gt;&gt; Brian Holt: This course is entirely
-
-82
-00:05:01.020 --> 00:05:02.230
-in JavaScript.
-
-83
 00:05:03.650 --> 00:05:08.400
 That's primarily cuz I know JavaScript,
 if we're being totally honest about it.
 
-84
+82
 00:05:08.400 --> 00:05:11.310
 But that's secondarily because
 it's the language of the web.
 
-85
+83
 00:05:11.310 --> 00:05:13.128
 This is primarily targeted
 at web developers.
 
-86
+84
 00:05:13.128 --> 00:05:17.034
 That isn't to say if you wrote Ruby,
 you couldn't take this,
 
-87
+85
 00:05:17.034 --> 00:05:19.410
 but that's why it's in JavaScript.
 
-88
+86
 00:05:19.410 --> 00:05:23.033
 If you are not super familiar with
 JavaScript already Front End Masters has
 
-89
+87
 00:05:23.033 --> 00:05:24.767
 amazing, amazing material on it.
 
-90
+88
 00:05:24.767 --> 00:05:28.844
 Just sit down and
 just cuddle up with old Kyle Simpson and
 
-91
+89
 00:05:28.844 --> 00:05:33.630
 just download everything that
 man has to say, it's fantastic.
 
-92
+90
 00:05:33.630 --> 00:05:34.360
 That's what I do.
 
-93
+91
 00:05:34.360 --> 00:05:37.460
 He taught me a lot about JavaScript,
 a lot about how it teaches.
 
-94
+92
 00:05:37.460 --> 00:05:40.205
 I'm not gonna say borrows,
 it's stolen from him.
 
-95
+93
 00:05:40.205 --> 00:05:45.000
 So yeah, so
 Kyle's books are all really great as well.
 
-96
+94
 00:05:45.000 --> 00:05:49.630
 I will be using modern
 JavaScript like ES6 and beyond.
 
-97
+95
 00:05:49.630 --> 00:05:52.666
 I will try and explain those things as I'm
 going through cuz I don't expect you to
 
-98
+96
 00:05:52.666 --> 00:05:53.930
 necessarily know those things.
 
-99
+97
 00:05:53.930 --> 00:05:57.621
 But again please check out all of
 Kyle's material, it goes into ES6 and
 
-100
-00:05:57.621 --> 00:06:03.277
+98
+00:05:57.621 --> 00:05:59.510
 beyond stuff really, really well.
-&gt;&gt; Brian Holt: Last here,
 
-101
-00:06:03.277 --> 00:06:06.850
-I have a correction to
-issue from the last course.
+99
+00:06:02.445 --> 00:06:06.850
+&gt;&gt; Brian Holt: Last here, I have a
+correction to issue from the last course.
 
-102
+100
 00:06:06.850 --> 00:06:10.520
 I said that Cormen's Algorithms was free,
 that is not true.
 
-103
+101
 00:06:10.520 --> 00:06:13.980
 I was basically telling you to pirate
 things which I'm not telling you to do.
 
-104
+102
 00:06:13.980 --> 00:06:16.280
 You should buy the book
 because someone wrote it and
 
-105
+103
 00:06:16.280 --> 00:06:17.590
 someone deserves to get paid for it.
 
-106
+104
 00:06:17.590 --> 00:06:24.420
 Anyway, so Cormen's algorithms,
 it's a book from the MIT press.
 
-107
+105
 00:06:25.540 --> 00:06:27.985
 It's a textbook in every
 sense of the word.
 
-108
+106
 00:06:27.985 --> 00:06:31.892
 It's really long, its really dry,
 its kind of boring but
 
-109
+107
 00:06:31.892 --> 00:06:37.578
 if you go through Cormen's Algorithms and
 you understand everything in that book.
 
-110
+108
 00:06:37.578 --> 00:06:40.550
 You'll understand everything that you
 need to know for the rest of your career.
 
-111
+109
 00:06:40.550 --> 00:06:45.865
 So I do suggest it,
 I've done it one and a half times.
 
-112
+110
 00:06:45.865 --> 00:06:48.079
 [LAUGH] It's worth it though.
 
-113
+111
 00:06:48.079 --> 00:06:52.170
 So anything else I wanted to go over?
 
-114
+112
 00:06:53.760 --> 00:06:55.540
 There's other great
 algorithm books as well.
 
-115
+113
 00:06:55.540 --> 00:06:59.790
 I know Cormen himself
 wrote a shorter book.
 
-116
+114
 00:06:59.790 --> 00:07:02.350
 I think it's Algorithms Unleashed or
 something like that.
 
-117
+115
 00:07:02.350 --> 00:07:05.280
 I've not read it, but if it's from Cormen,
 it's probably pretty good, too.
 
-118
+116
 00:07:05.280 --> 00:07:07.600
 So, cool.
 

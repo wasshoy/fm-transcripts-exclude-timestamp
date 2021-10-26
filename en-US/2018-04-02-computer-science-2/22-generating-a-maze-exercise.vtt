@@ -74,199 +74,197 @@ get this correct so.
 Be aware that that happens.
 
 16
-00:00:49.320 --> 00:00:54.609
-So this is what the 5 x 5 one should look
-like, the 8 x 8, the 15 x 15 will look
+00:00:49.320 --> 00:00:53.075
+So this is what the 5 x 5 one
+should look like, the 8 x 8,
 
 17
-00:00:54.609 --> 00:01:02.284
-something like that.
-&gt;&gt; Brian Holt: Okay?
+00:00:53.075 --> 00:00:56.087
+the 15 x 15 will look something like that.
 
 18
-00:01:02.284 --> 00:01:10.711
-So, and let's see.
-&gt;&gt; Brian Holt: The maze
+00:01:00.787 --> 00:01:02.284
+&gt;&gt; Brian Holt: Okay?
 
 19
-00:01:10.711 --> 00:01:13.690
-will be an array of arrays of objects,
-right?
+00:01:02.284 --> 00:01:04.218
+So, and let's see.
 
 20
+00:01:10.177 --> 00:01:13.690
+&gt;&gt; Brian Holt: The maze will be
+an array of arrays of objects, right?
+
+21
 00:01:13.690 --> 00:01:15.834
 We're familiar with arrays of arrays.
 
-21
+22
 00:01:15.834 --> 00:01:16.790
 0 x 0 is here.
 
-22
+23
 00:01:18.000 --> 00:01:22.130
 And then,
 each one of these objects has a visited,
 
-23
+24
 00:01:22.130 --> 00:01:24.000
 whether it's been visited or not, right?
 
-24
+25
 00:01:24.000 --> 00:01:26.350
 So you're gonna set that to true
 as soon as it's been visited.
 
-25
+26
 00:01:26.350 --> 00:01:28.621
 And then you're gonna see
 here that it has walls.
 
-26
+27
 00:01:31.287 --> 00:01:31.943
 &gt;&gt; Brian Holt: By default,
 
-27
+28
 00:01:31.943 --> 00:01:35.790
 everything given to you in the first
 go is going to have a wall, right?
 
-28
+29
 00:01:35.790 --> 00:01:37.330
 All of these have walls between them.
 
-29
+30
 00:01:39.350 --> 00:01:42.680
 As you get through more and more of them,
 
-30
+31
 00:01:42.680 --> 00:01:46.630
 you'll be setting these to false
 when there's no wall between them.
 
-31
+32
 00:01:46.630 --> 00:01:49.180
 Remember that for all these operations.
 
-32
+33
 00:01:49.180 --> 00:01:55.520
 So like if I'm going from 0 0 to 1 0 I
 
-33
+34
 00:01:55.520 --> 00:02:00.200
 have to set 0 0's north wall to false and
 
-34
+35
 00:02:00.200 --> 00:02:02.450
 I also have to set 1 0
 south wall to false so
 
-35
+36
 00:02:02.450 --> 00:02:08.100
 there are two walls you have to tear down,
 okay?
 
-36
+37
 00:02:09.450 --> 00:02:13.760
 The outer array represents the Y axis,
 the inner array represents the X axis.
 
-37
+38
 00:02:13.760 --> 00:02:17.760
 So your accessors look like that,
 [y][x], similar to before.
 
-38
+39
 00:02:19.640 --> 00:02:21.770
 The starting coordinate will be a pair.
 
-39
+40
 00:02:21.770 --> 00:02:26.020
 It's gonna be 5, 4, something like that.
 
-40
+41
 00:02:26.020 --> 00:02:28.440
 You don't have to do any
 boundary checkings on this.
 
-41
+42
 00:02:28.440 --> 00:02:31.400
 I guarantee you that I'm gonna
 give you a well formatted graph.
 
-42
+43
 00:02:31.400 --> 00:02:34.430
 And I'm going to give you
 valid starting points, right.
 
-43
-00:02:34.430 --> 00:02:38.302
-So I'm not interested in the educations
-here, I'm just interested in you getting
-
 44
-00:02:38.302 --> 00:02:45.208
-the algorithms down.
-&gt;&gt; Male 2: Does direction include
+00:02:34.430 --> 00:02:36.642
+So I'm not interested
+in the educations here,
 
 45
-00:02:45.208 --> 00:02:49.570
-directions that are not on the graph?
-&gt;&gt; Brian Holt: That one will, yeah.
+00:02:36.642 --> 00:02:39.364
+I'm just interested in you
+getting the algorithms down.
 
 46
+00:02:43.362 --> 00:02:48.200
+&gt;&gt; Male 2: Does direction include
+directions that are not on the graph?
+
+47
+00:02:48.200 --> 00:02:49.570
+&gt;&gt; Brian Holt: That one will, yeah.
+
+48
 00:02:49.570 --> 00:02:51.680
 So those ones you definitely do
 have to do boundary checking.
 
-47
-00:02:54.820 --> 00:02:57.643
-This randomized direction
-function is available
-
-48
-00:02:57.643 --> 00:03:02.263
-globally.
-&gt;&gt; Brian Holt: The other thing is,
-
 49
-00:03:02.263 --> 00:03:05.010
-you can work on the maze directly itself.
+00:02:54.820 --> 00:02:58.318
+This randomized direction
+function is available globally.
 
 50
+00:03:00.934 --> 00:03:05.010
+&gt;&gt; Brian Holt: The other thing is,
+you can work on the maze directly itself.
+
+51
 00:03:05.010 --> 00:03:07.670
 Don't worry about being
 destructive on your parameters.
 
-51
+52
 00:03:07.670 --> 00:03:09.530
 That's never a bad idea, I'm just kidding,
 
-52
+53
 00:03:09.530 --> 00:03:14.020
 that's usually always a bad idea but
 that's fine in this particular case.
 
-53
+54
 00:03:14.020 --> 00:03:15.169
 It's gonna be returning, so
 
-54
+55
 00:03:15.169 --> 00:03:19.320
 randomizedDirections will be returning
 north, east, south, west, in some order.
 
-55
-00:03:19.320 --> 00:03:21.133
-And then you just follow those in
-
 56
-00:03:21.133 --> 00:03:25.905
-that order.
-&gt;&gt; Brian Holt: If you're messing
+00:03:19.320 --> 00:03:21.877
+And then you just follow
+those in that order.
 
 57
-00:03:25.905 --> 00:03:29.819
-around with this later,
-if you're a nerd like me,
+00:03:24.447 --> 00:03:29.819
+&gt;&gt; Brian Holt: If you're messing around
+with this later, if you're a nerd like me,
 
 58
 00:03:29.819 --> 00:03:34.918
@@ -283,109 +281,117 @@ fun graphs, which I have never done.
 I'm not that nerdy, just kidding.
 
 61
-00:03:42.000 --> 00:03:44.219
+00:03:42.000 --> 00:03:42.500
 I totally did.
-&gt;&gt; Brian Holt: Yeah and
 
 62
-00:03:44.219 --> 00:03:47.973
-you'll see a console error if you
-call randomize directions too
+00:03:43.733 --> 00:03:46.443
+&gt;&gt; Brian Holt: Yeah and
+you'll see a console error if you call
 
 63
-00:03:47.973 --> 00:03:55.420
-much.
-&gt;&gt; Brian Holt: So
+00:03:46.443 --> 00:03:48.397
+randomize directions too much.
 
 64
-00:03:55.420 --> 00:03:59.430
-something that you'll get from
-this helper which I found helpful.
+00:03:55.290 --> 00:03:58.549
+&gt;&gt; Brian Holt: So something that you'll
+get from this helper which I found
 
 65
+00:03:58.549 --> 00:03:59.430
+helpful.
+
+66
 00:03:59.430 --> 00:04:02.200
 If the square's red,
 it means that it's not visited.
 
-66
+67
 00:04:02.200 --> 00:04:04.470
 Everything should be visited by the end.
 
-67
+68
 00:04:04.470 --> 00:04:06.020
 And then you'll also be able to see.
 
-68
+69
 00:04:06.020 --> 00:04:09.130
 You can see the north wall here, and
 you can see the south wall here, right?
 
-69
+70
 00:04:09.130 --> 00:04:13.300
 So if you can, you'll be able to tell if
 one of them hasn't been visited, or not.
 
-70
-00:04:14.670 --> 00:04:17.467
-If you'd like to see all the utility
-functions, they're all written out here in
-
 71
-00:04:17.467 --> 00:04:22.488
-this other code pen.
-&gt;&gt; Brian Holt: Highly, highly suggest here
+00:04:14.670 --> 00:04:16.356
+If you'd like to see all
+the utility functions,
 
 72
-00:04:22.488 --> 00:04:25.502
-that you work on one unit test at a time,
-and try not to solve all of them at once,
+00:04:16.356 --> 00:04:18.219
+they're all written out here
+in this other code pen.
 
 73
+00:04:21.343 --> 00:04:23.995
+&gt;&gt; Brian Holt: Highly, highly suggest here
+that you work on one unit test at a time,
+
+74
+00:04:23.995 --> 00:04:25.502
+and try not to solve all of them at once,
+
+75
 00:04:25.502 --> 00:04:28.360
 because there's a decent chance
 you're gonna hit infinite recursion.
 
-74
+76
 00:04:30.830 --> 00:04:35.120
 If you do hit infinite recursion and
 you save your CodePen that can be a bit of
 
-75
+77
 00:04:35.120 --> 00:04:39.810
 a disaster, because CodePen will run
 things as soon as you open the tab again.
 
-76
+78
 00:04:39.810 --> 00:04:45.760
 So there is a way, if you just Google
 CodePen disable JavaScript, it will show
 
-77
+79
 00:04:45.760 --> 00:04:50.510
 you how to make it not run it so you can
 fix it, save it, and then reload the page.
 
-78
-00:04:50.510 --> 00:04:56.496
-So just Google it.
-&gt;&gt; Brian Holt: Cool,
-
-79
-00:04:56.496 --> 00:05:00.640
-so you can see here this is what
-it's gonna expect to look for.
-
 80
-00:05:02.230 --> 00:05:05.844
-This is quite long because
-15 x 15 is a lot of
+00:04:50.510 --> 00:04:52.336
+So just Google it.
 
 81
-00:05:05.844 --> 00:05:09.900
-cells.
-&gt;&gt; Brian Holt: Cool.
+00:04:56.019 --> 00:04:56.655
+&gt;&gt; Brian Holt: Cool, so
 
 82
+00:04:56.655 --> 00:05:00.640
+you can see here this is what
+it's gonna expect to look for.
+
+83
+00:05:02.230 --> 00:05:06.499
+This is quite long because
+15 x 15 is a lot of cells.
+
+84
+00:05:09.445 --> 00:05:09.945
+&gt;&gt; Brian Holt: Cool.
+
+85
 00:05:11.380 --> 00:05:14.390
 So, I'm gonna give you a bit
 of a break to do this.

@@ -134,65 +134,63 @@ That's just force of habit on my part,
 but if you don't feel like doing that,
 
 30
-00:02:02.004 --> 00:02:06.838
+00:02:02.004 --> 00:02:03.049
 that's fine, too, so.
-&gt;&gt; Brian Holt: So
 
 31
-00:02:06.838 --> 00:02:11.911
-let's just go down and make sure that I'm
-not crazy, which this will definitively
+00:02:06.693 --> 00:02:10.099
+&gt;&gt; Brian Holt: So let's just go down and
+make sure that I'm not crazy,
 
 32
-00:02:11.911 --> 00:02:16.975
+00:02:10.099 --> 00:02:13.221
+which this will definitively
 prove that I'm not.
-&gt;&gt; Brian Holt: But
 
 33
-00:02:16.975 --> 00:02:19.840
-we should see here that preorderTraverse
-is working as expected.
+00:02:16.822 --> 00:02:19.840
+&gt;&gt; Brian Holt: But we should see here that
+preorderTraverse is working as expected.
 
 34
-00:02:21.570 --> 00:02:24.704
+00:02:21.570 --> 00:02:22.070
 Cool?
-&gt;&gt; Brian Holt: So
 
 35
-00:02:24.704 --> 00:02:28.440
-now that we've coded one of these
-they're all pretty similar, right?
+00:02:24.582 --> 00:02:27.454
+&gt;&gt; Brian Holt: So now that we've
+coded one of these they're all pretty
 
 36
+00:02:27.454 --> 00:02:28.440
+similar, right?
+
+37
 00:02:28.440 --> 00:02:30.340
 They're more or
 less doing the same thing and
 
-37
+38
 00:02:30.340 --> 00:02:34.350
 we're just reordering them in some sense.
 
-38
+39
 00:02:34.350 --> 00:02:36.820
 So in this particular case,
 does this work?
 
-39
+40
 00:02:36.820 --> 00:02:38.940
 Nope, it doesn't, not in CodePen.
 
-40
-00:02:38.940 --> 00:02:42.567
-But what I'm going to do is I'm
-just going to move array.push
-
 41
-00:02:42.567 --> 00:02:46.859
-between the two.
-&gt;&gt; Brian Holt: And
+00:02:38.940 --> 00:02:43.625
+But what I'm going to do is I'm just
+going to move array.push between the two.
 
 42
-00:02:46.859 --> 00:02:48.850
+00:02:46.702 --> 00:02:48.850
+&gt;&gt; Brian Holt: And
 that's what inorder traversal is, right?
 
 43
@@ -215,80 +213,79 @@ But let's go take a look and
 make sure that that's actually the case.
 
 47
-00:03:09.333 --> 00:03:09.880
-&gt;&gt; Brian Holt: It's not,
+00:03:09.333 --> 00:03:10.540
+&gt;&gt; Brian Holt: It's not, apparently.
 
 48
-00:03:09.880 --> 00:03:12.610
-apparently.
-&gt;&gt; Speaker 2: You didn't change
+00:03:11.990 --> 00:03:13.490
+&gt;&gt; Speaker 2: You didn't
+change the function names.
 
 49
-00:03:12.610 --> 00:03:13.950
-the function names.
+00:03:13.490 --> 00:03:15.200
 &gt;&gt; Brian Holt: I didn't.
-
-50
-00:03:13.950 --> 00:03:15.200
 You're right.
 
-51
+50
 00:03:15.200 --> 00:03:18.739
 The dangers of copy paste code.
 
-52
+51
 00:03:19.900 --> 00:03:20.900
 Never done that before.
 
-53
-00:03:22.550 --> 00:03:28.748
+52
+00:03:22.550 --> 00:03:23.732
 Cool, so that works.
-&gt;&gt; Brian Holt: Lastly
+
+53
+00:03:28.273 --> 00:03:31.360
+&gt;&gt; Brian Holt: Lastly we're
+gonna do post order traversal,
 
 54
-00:03:28.748 --> 00:03:33.899
-we're gonna do post order traversal,
+00:03:31.360 --> 00:03:33.899
 this time learning from my mistakes.
 
 55
-00:03:41.085 --> 00:03:41.622
+00:03:41.085 --> 00:03:44.200
 &gt;&gt; Brian Holt: Okay, so
-
-56
-00:03:41.622 --> 00:03:44.200
 here I changed it to postorder, postorder.
 
-57
+56
 00:03:44.200 --> 00:03:48.080
 And then the last thing I
 do is add it to the array.
 
-58
-00:03:48.080 --> 00:03:54.658
+57
+00:03:48.080 --> 00:03:52.195
 We'll go down here and remove the x.
+
+58
+00:03:54.513 --> 00:03:55.875
 &gt;&gt; Brian Holt: And
+we'll try running it again.
 
 59
-00:03:54.658 --> 00:04:01.070
-we'll try running it again.
+00:03:58.872 --> 00:04:01.070
 &gt;&gt; Brian Holt: And now we have all three.
 
 60
-00:04:01.070 --> 00:04:02.328
+00:04:01.070 --> 00:04:03.592
 In pre-order, in order,
+and post order traversal.
 
 61
-00:04:02.328 --> 00:04:07.480
-and post order traversal.
+00:04:05.712 --> 00:04:07.480
 &gt;&gt; Brian Holt: Questions?
 
 62
-00:04:07.480 --> 00:04:12.467
+00:04:07.480 --> 00:04:08.175
 It makes sense?
-&gt;&gt; Brian Holt: I see people kinda
 
 63
-00:04:12.467 --> 00:04:14.055
+00:04:11.601 --> 00:04:14.055
+&gt;&gt; Brian Holt: I see people kinda
 like just tilting their heads.
 
 64

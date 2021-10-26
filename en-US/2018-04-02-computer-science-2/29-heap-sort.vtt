@@ -229,394 +229,392 @@ everything in those children would be
 smaller than also then the root node.
 
 49
-00:03:00.710 --> 00:03:05.639
+00:03:00.710 --> 00:03:02.396
 That's the only guarantee thata you have.
-&gt;&gt; Brian Holt: If you're doing
 
 50
-00:03:05.639 --> 00:03:07.770
+00:03:05.032 --> 00:03:06.765
+&gt;&gt; Brian Holt: If you're doing
 in order traversal of the BST,
-you'll get a sort of list.
 
 51
+00:03:06.765 --> 00:03:07.770
+you'll get a sort of list.
+
+52
 00:03:07.770 --> 00:03:10.280
 If you do an in order
 traversal of a binary Heap,
 
-52
+53
 00:03:10.280 --> 00:03:14.510
 you will get nonsense,
 so that doesn't help.
 
-53
+54
 00:03:14.510 --> 00:03:19.040
 And a binary Heap is what we
 call a complete binary tree.
 
-54
+55
 00:03:19.040 --> 00:03:21.710
 That means that everything
 is filled out and
 
-55
+56
 00:03:21.710 --> 00:03:24.030
 shifted as far to the left as possible.
 
-56
+57
 00:03:24.030 --> 00:03:27.980
 So do I have I do, so
 if we're looking here at this right
 
-57
+58
 00:03:27.980 --> 00:03:31.020
 notice everything has shifted
 as far left as possible.
 
-58
+59
 00:03:31.020 --> 00:03:33.620
 That's not always true of a BST right
 
-59
+60
 00:03:33.620 --> 00:03:38.240
 cuz it can be sparse I could have
 a child here I could have a child here.
 
-60
+61
 00:03:38.240 --> 00:03:43.000
 That doesn't work with binary Heaps
 it has to be as compact as possible.
 
-61
+62
 00:03:43.000 --> 00:03:44.060
 And the reason being that,
 
-62
+63
 00:03:44.060 --> 00:03:47.230
 because we're gonna represent it as an
 array it has to be as compact as possible.
 
-63
+64
 00:03:50.590 --> 00:03:53.530
 They come in two falvors,
 flavors, I can spell.
 
-64
+65
 00:03:53.530 --> 00:03:59.180
 We're just concerned with max heaps today,
 but as you may imagine a min heap
 
-65
+66
 00:03:59.180 --> 00:04:05.170
 would just be basically the inverse of
 everything that we're talking about.
 
-66
+67
 00:04:05.170 --> 00:04:07.720
 But today we're gonna be only
 worrying about max Heaps.
 
-67
+68
 00:04:09.990 --> 00:04:14.600
 So this is why priority queue
 is typically a binary Heap,
 
-68
+69
 00:04:14.600 --> 00:04:17.830
 is that with a priority queue,
 the only thing that you
 
-69
+70
 00:04:17.830 --> 00:04:21.060
 actually really care about is the next
 thing to come out of the queue, right?
 
-70
+71
 00:04:21.060 --> 00:04:25.420
 And a priority queue is basically
 a queue where it's first in, first out.
 
-71
+72
 00:04:25.420 --> 00:04:28.350
 But it's actually a little bit more
 complicated than that because you're also
 
-72
+73
 00:04:28.350 --> 00:04:30.360
 worried about some priority, right?
 
-73
+74
 00:04:30.360 --> 00:04:31.830
 So if something is really high priority,
 
-74
+75
 00:04:31.830 --> 00:04:35.090
 you want it to go to the front
 of the queue, right?
 
-75
+76
 00:04:35.090 --> 00:04:36.914
 That's why a Heap works really well for
 
-76
+77
 00:04:36.914 --> 00:04:40.182
 this because it's always going to
 give you the most important thing.
 
-77
+78
 00:04:40.182 --> 00:04:44.169
 And then once you remove it then you're
 gonna pull out the next thing that's
 
-78
+79
 00:04:44.169 --> 00:04:47.296
 the most important and
 you're just gonna keep doing that.
 
-79
+80
 00:04:47.296 --> 00:04:50.810
 And that's actually how a HeapSort works,
 right?
 
-80
+81
 00:04:50.810 --> 00:04:56.280
 Because if we're able to always find
 the largest number in some array,
 
-81
+82
 00:04:56.280 --> 00:04:58.210
 can't we just keep dequeuing things and
 
-82
+83
 00:04:58.210 --> 00:05:00.740
 then adding them to the end until
 eventually the whole thing is sorted?
 
-83
+84
 00:05:01.830 --> 00:05:05.740
 So that's basically what a Heap Sort is,
 is you construct this priority queue and
 
-84
+85
 00:05:05.740 --> 00:05:08.810
 then you keep dequeuing things until
 eventually you have a sorted array.
 
-85
+86
 00:05:10.340 --> 00:05:10.900
 Make sense?
 
-86
+87
 00:05:12.220 --> 00:05:14.740
 Probably not, but that's okay,
 we're getting there.
 
-87
+88
 00:05:14.740 --> 00:05:19.550
 So let's talk about the magical property
 that we're representing a tree in
 
-88
+89
 00:05:19.550 --> 00:05:22.410
 an array because that's
 probably kinda strange, right?
 
-89
+90
 00:05:22.410 --> 00:05:28.697
 So if I have this as my Heap,
 this is a min Heap.
 
-90
+91
 00:05:28.697 --> 00:05:31.290
 But it works the same way,
 it doesn't matter that it's a min or maxi.
 
-91
+92
 00:05:31.290 --> 00:05:35.791
 And in this case the one is the smallest
 number in this particular array, right?
 
-92
+93
 00:05:35.791 --> 00:05:41.097
 So you can see here that it's
 represented at the element, right?
 
-93
+94
 00:05:41.097 --> 00:05:44.330
 And then we just kind
 of insert them in order
 
-94
+95
 00:05:44.330 --> 00:05:45.840
 as if it was like
 a breadth-first traversal.
 
-95
+96
 00:05:45.840 --> 00:05:49.080
 So then five and three then seven
 then nine then eight, right?
 
-96
+97
 00:05:49.080 --> 00:05:52.690
 So just go one, two, three,
 four, five, six, right?
 
-97
+98
 00:05:52.690 --> 00:05:55.280
 And just keep doing that for
 the entire thing.
 
-98
+99
 00:05:55.280 --> 00:06:00.528
 If you do it like that,
 then that means if I'm on index one
 
-99
+100
 00:06:00.528 --> 00:06:06.450
 then at 2n+1 excuse me, 2 plus 1 is 3.
 
-100
+101
 00:06:06.450 --> 00:06:10.430
 That's going to be the left child, right?
 
-101
+102
 00:06:10.430 --> 00:06:15.660
 So if I'm at 5, then at 3 is going
 to be the left child, right?
 
-102
+103
 00:06:16.710 --> 00:06:19.120
 And if I'm at 2, right?
 
-103
-00:06:19.120 --> 00:06:23.930
-So I'm gonna be 5, then the,
-
 104
-00:06:23.930 --> 00:06:30.744
-yeah.
-&gt;&gt; Brian Holt: If I'm at index 2,
+00:06:19.120 --> 00:06:25.045
+So I'm gonna be 5, then the, yeah.
 
 105
-00:06:30.744 --> 00:06:36.960
-which is 3, then if I go to 2n + 1 which
-is index five it's gonna be 8, right?
+00:06:29.282 --> 00:06:31.690
+&gt;&gt; Brian Holt: If I'm at index 2,
+which is 3,
 
 106
+00:06:31.690 --> 00:06:36.960
+then if I go to 2n + 1 which is
+index five it's gonna be 8, right?
+
+107
 00:06:36.960 --> 00:06:39.220
 So that math formula is
 how you find the left and
 
-107
+108
 00:06:39.220 --> 00:06:41.350
 right children,
 that always holds true, right?
 
-108
+109
 00:06:41.350 --> 00:06:44.793
 If I'm on index 100 then
 it's gonna be 2n plus 1.
 
-109
+110
 00:06:44.793 --> 00:06:48.083
 So it's gonna be 201 is going
 to be the left child and
 
-110
+111
 00:06:48.083 --> 00:06:50.780
 202 is going to be the right child.
 
-111
+112
 00:06:50.780 --> 00:06:54.030
 Do we see how that kinda relationship
 works in terms of how you represent it
 
-112
+113
 00:06:54.030 --> 00:06:55.500
 as a in memory?
 
-113
+114
 00:06:56.580 --> 00:07:01.310
 That's why it's important that it's
 compact and complete binary tree is so
 
-114
-00:07:01.310 --> 00:07:07.712
-you can hold that formula true, okay?
-&gt;&gt; Brian Holt: Okay
-
 115
-00:07:07.712 --> 00:07:12.388
-so,
-&gt;&gt; Brian Holt: What you need to
+00:07:01.310 --> 00:07:03.720
+you can hold that formula true, okay?
 
 116
-00:07:12.388 --> 00:07:16.736
-do is you need to construct a Heap
-cuz I'm gonna give you a list
+00:07:06.817 --> 00:07:11.621
+&gt;&gt; Brian Holt: Okay so,
+&gt;&gt; Brian Holt: What
 
 117
-00:07:16.736 --> 00:07:19.336
-of totally unsorted numbers.
+00:07:11.621 --> 00:07:16.310
+you need to do is you need to construct
+a Heap cuz I'm gonna give you
 
 118
+00:07:16.310 --> 00:07:19.336
+a list of totally unsorted numbers.
+
+119
 00:07:19.336 --> 00:07:21.970
 And the guarantees that I
 want to have about this that
 
-119
+120
 00:07:21.970 --> 00:07:25.560
 the first item in the array is going to be
 the largest number in the array is not yet
 
-120
+121
 00:07:25.560 --> 00:07:28.740
 true because that array could be anything.
 
-121
+122
 00:07:28.740 --> 00:07:31.940
 So what you need to do is you
 need to Heapify this array,
 
-122
+123
 00:07:31.940 --> 00:07:34.670
 did not make up that term,
 that's what it's called, Heapify.
 
-123
+124
 00:07:36.710 --> 00:07:37.250
 Heapify.
 
-124
+125
 00:07:38.510 --> 00:07:39.540
 So that's what we're gonna do.
 
-125
-00:07:39.540 --> 00:07:41.944
-We're gonna make a max heap
-out of the array that you gave
-
 126
-00:07:41.944 --> 00:07:46.857
-me.
-&gt;&gt; Brian Holt: So,
+00:07:39.540 --> 00:07:42.157
+We're gonna make a max heap out
+of the array that you gave me.
 
 127
-00:07:48.931 --> 00:07:50.911
+00:07:46.126 --> 00:07:50.911
+&gt;&gt; Brian Holt: So,
 &gt;&gt; Brian Holt: Let's talk about Heapify
 
 128
-00:07:50.911 --> 00:07:56.934
+00:07:50.911 --> 00:07:51.544
 first.
-&gt;&gt; Brian Holt: So
 
 129
-00:07:56.934 --> 00:08:03.480
+00:07:56.711 --> 00:07:59.724
+&gt;&gt; Brian Holt: So
 I'm gonna start at index 5.
-&gt;&gt; Brian Holt: Which
 
 130
-00:08:03.480 --> 00:08:07.000
-is going to be value 9, right?
+00:08:02.931 --> 00:08:07.000
+&gt;&gt; Brian Holt: Which is
+going to be value 9, right?
 
 131
 00:08:07.000 --> 00:08:10.364
@@ -799,298 +797,284 @@ Heapify index does nothing, value 3.
 Value, so that's gonna be 1, 2, 3.
 
 170
-00:10:46.833 --> 00:10:49.649
-&gt;&gt; Brian Holt: I must have right, okay,
+00:10:46.833 --> 00:10:52.730
+&gt;&gt; Brian Holt: I must have right,
+okay, value 3 index one, right?
 
 171
-00:10:49.649 --> 00:10:52.730
-value 3 index one, right?
-
-172
 00:10:52.730 --> 00:10:54.231
 Index one is 3, right?
 
-173
+172
 00:10:54.231 --> 00:10:59.131
 So you can see here it's gonna swap 3 and
 
-174
+173
 00:10:59.131 --> 00:11:03.760
 10 because 3 is smaller than 10.
 
-175
+174
 00:11:03.760 --> 00:11:04.690
 And 10 is larger than 7.
 
-176
+175
 00:11:04.690 --> 00:11:09.310
 So that is why you see here 10
 swapped with 3 and then because we
 
-177
+176
 00:11:09.310 --> 00:11:13.830
 did that we don't have any guarantees
 about what's below that in the Heap.
 
-178
+177
 00:11:13.830 --> 00:11:16.459
 So we have to call Heapify again on 3.
 
-179
+178
 00:11:16.459 --> 00:11:17.959
 That make sense?
 
-180
+179
 00:11:17.959 --> 00:11:23.920
 Eventually you're going to end up
 with an array that looks like this.
 
-181
+180
 00:11:25.210 --> 00:11:26.850
 So this is what a Heap looks like.
 
-182
+181
 00:11:28.210 --> 00:11:31.422
 So if I go to 10,
 10 is larger than both 7 and 9.
 
-183
+182
 00:11:31.422 --> 00:11:33.390
 And let's just take a look at 7.
 
-184
+183
 00:11:33.390 --> 00:11:36.930
 If I go 7 two to the right
 gonna be at 6 and 5.
 
-185
+184
 00:11:36.930 --> 00:11:38.530
 It's definitely larger than both of those.
 
-186
+185
 00:11:38.530 --> 00:11:42.330
 And then if I go to 6 that's index 3.
 
-187
+186
 00:11:42.330 --> 00:11:45.360
 So I have to look at 7 and 8, right?
 
-188
+187
 00:11:50.100 --> 00:11:53.560
 So 4, 5, so 3 and 4, right,
 it's larger than 3 and 4 as well, right?
 
-189
+188
 00:11:53.560 --> 00:11:55.060
 So that's what a Heap looks like.
 
-190
+189
 00:11:55.060 --> 00:11:57.990
 So the only guarantee that I have
 in here is that 10 is definitely
 
-191
+190
 00:11:57.990 --> 00:12:00.340
 the largest number in here, right?
 
-192
+191
 00:12:00.340 --> 00:12:05.040
 Now what's cool, when you de-queue
 something from a priority queue,
 
-193
+192
 00:12:05.040 --> 00:12:07.110
 all you have to do is swap in this number.
 
-194
+193
 00:12:07.110 --> 00:12:11.075
 So what I'm gonna do is I'm gonna swap
 in the one to the 10 like I do here.
 
-195
+194
 00:12:11.075 --> 00:12:14.694
 10 is definitely the largest
 number on the array, right?
 
-196
+195
 00:12:14.694 --> 00:12:17.080
 Because that's what the Heap told us.
 
-197
+196
 00:12:17.080 --> 00:12:21.600
 And now I just call heapify on this,
 and It's going to say,
 
-198
+197
 00:12:21.600 --> 00:12:25.360
 swap with 9, and then it's just going
 to move down until 1 ends up down here.
 
-199
+198
 00:12:25.360 --> 00:12:30.320
 And now this is what my priority queue
 looks like 9 is the largest number.
 
-200
+199
 00:12:30.320 --> 00:12:33.130
 We have that guarantee, so
 we're going to swap that.
 
-201
+200
 00:12:33.130 --> 00:12:37.101
 And you're gonna end up with 9 here,
 and you're swapping that with 4,
 
-202
+201
 00:12:37.101 --> 00:12:39.481
 just call Heapify on 4,
 so on and so forth.
 
-203
+202
 00:12:39.481 --> 00:12:41.797
 Until, actually let me show
 you the completed one just so
 
-204
+203
 00:12:41.797 --> 00:12:42.915
 you see what it looks like.
 
-205
+204
 00:12:54.002 --> 00:12:56.700
 &gt;&gt; Brian Holt: Where is my output for
 this?
 
-206
+205
 00:12:56.700 --> 00:12:58.310
 There it is, okay?
 
-207
+206
 00:12:58.310 --> 00:13:01.317
 So I called it with this huge array.
 
-208
+207
 00:13:01.317 --> 00:13:06.749
 And you can see here over time all of this
 right here is just constructing the heap,
 
-209
+208
 00:13:06.749 --> 00:13:07.340
 right?
 
-210
+209
 00:13:07.340 --> 00:13:10.678
 Until eventually you get
 50 being the largest here.
 
-211
+210
 00:13:10.678 --> 00:13:13.920
 And then I just de-queuing things
 until eventually you can see
 
-212
+211
 00:13:13.920 --> 00:13:17.102
 this this just starts growing
 until eventually the whole list
 
-213
+212
 00:13:17.102 --> 00:13:19.740
 is sorted
 &gt;&gt; Brian Holt: So
 
-214
+213
 00:13:19.740 --> 00:13:22.596
 the first half of heap sort
 is creating a max heap, and
 
-215
+214
 00:13:22.596 --> 00:13:27.450
 the second part is just de-queuing things
 until eventually you have a sorted list.
 
-216
-00:13:27.450 --> 00:13:30.476
+215
+00:13:27.450 --> 00:13:30.793
 So that is the general
-premise of what Heap Sort
+premise of what Heap Sort is.
+
+216
+00:13:34.703 --> 00:13:37.463
+&gt;&gt; Brian Holt: Any questions about
+in general what the process of what
 
 217
-00:13:30.476 --> 00:13:35.423
-is.
-&gt;&gt; Brian Holt: Any questions
+00:13:37.463 --> 00:13:38.184
+Heap Sort is?
 
 218
-00:13:35.423 --> 00:13:37.943
-about in general what
-the process of what Heap Sort
+00:13:41.472 --> 00:13:46.410
+&gt;&gt; Speaker 2: When comparing AVL trees
+with binary Heap a sort of apples to
 
 219
-00:13:37.943 --> 00:13:42.757
-is?
-&gt;&gt; Speaker 2: When comparing
+00:13:46.410 --> 00:13:48.570
+oranges comparison.
 
 220
-00:13:42.757 --> 00:13:46.213
-AVL trees with binary
-Heap a sort of apples
-
-221
-00:13:46.213 --> 00:13:48.690
-to oranges comparison.
+00:13:48.570 --> 00:13:51.110
 &gt;&gt; Brian Holt: Yeah,
-
-222
-00:13:49.740 --> 00:13:51.110
 that's a good question.
 
-223
+221
 00:13:51.110 --> 00:13:56.042
 Is the comparison between AVL trees and
 Heaps apples to oranges?
 
-224
+222
 00:13:56.042 --> 00:13:58.230
 They're used for very different purposes.
 
-225
+223
 00:13:58.230 --> 00:14:02.810
 They share a commonality that they're both
 representation of trees, in some capacity.
 
-226
-00:14:02.810 --> 00:14:06.290
+224
+00:14:02.810 --> 00:14:06.642
 But you wouldn't, they don't really
-have much overlap in terms of use
+have much overlap in terms of use case.
 
-227
-00:14:06.290 --> 00:14:13.021
-case.
-&gt;&gt; Brian Holt: You
+225
+00:14:12.881 --> 00:14:16.390
+&gt;&gt; Brian Holt: You construct AVL trees to
+be able to search something very quickly.
 
-228
-00:14:13.021 --> 00:14:16.390
-construct AVL trees to be able to
-search something very quickly.
-
-229
+226
 00:14:16.390 --> 00:14:20.522
 So I have database index, and
 I wanna be able to find something
 
-230
+227
 00:14:20.522 --> 00:14:25.448
 in the database very, very quickly so
 that I would construct a AVL tree for
 
-231
+228
 00:14:25.448 --> 00:14:28.881
 that, or
 some sort of binary source tree variant.
 
-232
+229
 00:14:28.881 --> 00:14:33.904
 And I need to construct a priority queue,
 so therefore I construct a Heap.
 
-233
+230
 00:14:33.904 --> 00:14:36.470
 They are trees, but
 they're different flavors of trees.
