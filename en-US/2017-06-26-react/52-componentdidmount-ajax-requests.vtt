@@ -1,0 +1,967 @@
+WEBVTT
+
+1
+00:00:00.270 --> 00:00:05.625
+So for us, we're gonna do
+something with componentDidMount,
+
+2
+00:00:05.625 --> 00:00:11.093
+except for we're gonna do this not
+on search, so get rid of that.
+
+3
+00:00:11.093 --> 00:00:14.488
+We're gonna do on details,
+
+4
+00:00:18.640 --> 00:00:23.166
+So the first thing that we;re gonna
+have to do here is unfortunately,
+
+5
+00:00:23.166 --> 00:00:25.706
+this is a function component, right?
+
+6
+00:00:25.706 --> 00:00:27.743
+That is just a function
+the returns mark up.
+
+7
+00:00:27.743 --> 00:00:32.403
+We're gonna have to convert this to an
+ES6 Class, which is something that you'll
+
+8
+00:00:32.403 --> 00:00:35.679
+kinda find yourself going back and
+forth with sometimes.
+
+9
+00:00:35.679 --> 00:00:39.699
+But that's normal and healthy, so
+
+10
+00:00:39.699 --> 00:00:45.730
+we're gonna I say class
+Details extends Component,
+
+11
+00:00:45.730 --> 00:00:49.361
+and bring in Component up here.
+
+12
+00:00:54.968 --> 00:01:03.599
+Okay, Then we're gonna to turn this
+into our render method right here.
+
+13
+00:01:09.403 --> 00:01:10.530
+Then down here
+
+14
+00:01:20.490 --> 00:01:25.514
+And then we need to turn the props
+up here, in fact we can just
+
+15
+00:01:25.514 --> 00:01:30.254
+get rid of that, and
+say props show is going to be a Show.
+
+16
+00:01:44.563 --> 00:01:49.365
+And everywhere that we say props.show,
+which I think is just that one place,
+
+17
+00:01:49.365 --> 00:01:54.969
+right, we're just gonna say this.prop.show
+because now it's gonna be on the context,
+
+18
+00:01:54.969 --> 00:01:57.180
+not being passed in from the props.
+
+19
+00:02:03.380 --> 00:02:06.390
+So you're gonna notice up here
+that class is complaining, okay?
+
+20
+00:02:06.390 --> 00:02:12.370
+This should be a stateless functional
+component, that's what the AB and
+
+21
+00:02:12.370 --> 00:02:17.104
+B configuration does for you,
+but it's a Normal, okay?
+
+22
+00:02:19.330 --> 00:02:23.108
+So what we're gonna do is we're
+gonna have this kind of request,
+
+23
+00:02:23.108 --> 00:02:27.231
+something from our fake API,
+this used to use the open movie database,
+
+24
+00:02:27.231 --> 00:02:31.096
+which unfortunately went closed,
+so it's no longer still open.
+
+25
+00:02:31.096 --> 00:02:36.402
+[LAUGH] Understandably so, so
+I've mocked out a fake API for
+
+26
+00:02:36.402 --> 00:02:42.886
+you, so if you go over to your terminal
+really quick, open a new window.
+
+27
+00:02:48.790 --> 00:02:52.577
+I'm gonna go into talks FM complete mess,
+so
+
+28
+00:02:52.577 --> 00:02:57.968
+I'm not gonna close my dev server,
+I'm gonna leave that open.
+
+29
+00:02:57.968 --> 00:03:02.863
+But this one, I'm gonna run yarn API,
+which I already included for you, and
+
+30
+00:03:02.863 --> 00:03:08.229
+you're gonna get something that looks
+like this starting server on Port 3000.
+
+31
+00:03:08.229 --> 00:03:12.096
+And what this is going to do is it's
+basically going to make a fake API for
+
+32
+00:03:12.096 --> 00:03:16.640
+you, that's gonna give you back ratings
+for your TV shows, it's random right?
+
+33
+00:03:16.640 --> 00:03:18.839
+I did not rate these myself, right?
+
+34
+00:03:18.839 --> 00:03:20.763
+It's just randomly generated
+every single time.
+
+35
+00:03:28.647 --> 00:03:35.304
+Cool So
+
+36
+00:03:35.304 --> 00:03:43.339
+now that this is an ESX component, let's
+go ahead and, Yeah, start requesting data.
+
+37
+00:03:45.800 --> 00:03:50.619
+So by virtue of the fact that we only
+make the API request after the the item
+
+38
+00:03:50.619 --> 00:03:52.279
+has amounted to the DOM,
+
+39
+00:03:52.279 --> 00:03:56.799
+we have this interim state that
+we're going to be loading, right?
+
+40
+00:03:56.799 --> 00:04:00.808
+Because it's going to load the first time
+without that rating, so that means that
+
+41
+00:04:00.808 --> 00:04:04.776
+we need to load with a loading state, and
+then eventually render something out.
+
+42
+00:04:04.776 --> 00:04:06.568
+Does that make sense, right?
+
+43
+00:04:06.568 --> 00:04:10.357
+This is good, this is why you don't make
+API requests in component will mount
+
+44
+00:04:10.357 --> 00:04:11.991
+because you don't wanna wait for
+
+45
+00:04:11.991 --> 00:04:15.160
+your API request to finish
+before you render something.
+
+46
+00:04:15.160 --> 00:04:19.609
+You wanna render first and then request
+something and then render again once
+
+47
+00:04:19.609 --> 00:04:23.658
+the data is back, that's why you do
+all this in component did mount.
+
+48
+00:04:23.658 --> 00:04:29.460
+So let's create a new class and
+a new page called spinner.JSX,
+
+49
+00:04:29.460 --> 00:04:36.460
+and this will be a reusable component
+that we can use anytime we're loading.
+
+50
+00:04:37.980 --> 00:04:42.604
+So let's opt in to flow,
+we're going to import React from 'react'
+
+51
+00:04:45.175 --> 00:04:50.020
+And we're going to import styled and
+
+52
+00:04:50.020 --> 00:04:55.807
+keyframes from 'styled-components'.
+
+53
+00:04:59.320 --> 00:05:03.773
+So I'm gonna show you another fun
+capability with styled components,
+
+54
+00:05:03.773 --> 00:05:06.826
+you can still do keyframe
+animations with them.
+
+55
+00:05:06.826 --> 00:05:12.201
+So what we're gonna do is we're gonna
+make a spin keyframe animation,
+
+56
+00:05:12.201 --> 00:05:18.114
+that's gonna be equal to keyframes,
+which is another tag template literal,
+
+57
+00:05:18.114 --> 00:05:25.922
+and we're gonna go from Transform,
+
+58
+00:05:25.922 --> 00:05:30.985
+rotate, zero degrees.
+
+59
+00:05:36.449 --> 00:05:39.895
+To transform,
+
+60
+00:05:39.895 --> 00:05:45.465
+rotate 360 degrees.
+
+61
+00:05:45.465 --> 00:05:48.065
+Actually I'm pretty sure now
+that I've written this out,
+
+62
+00:05:48.065 --> 00:05:50.989
+I'm pretty sure you just need two
+write and then in first the from.
+
+63
+00:05:50.989 --> 00:05:58.162
+Whatever the case we're just gonna leave
+it cuz that's what it is in my notes okay,
+
+64
+00:05:58.162 --> 00:06:02.478
+then we're gonna do const
+Image = styled.img,
+
+65
+00:06:06.254 --> 00:06:10.885
+And we're gonna say animation And
+
+66
+00:06:10.885 --> 00:06:18.662
+then we're gonna put in spin,
+4s, infinite,
+
+67
+00:06:21.291 --> 00:06:28.304
+Linear; and background-image:
+
+68
+00:06:28.304 --> 00:06:36.254
+url(/public/image/loading.png
+
+69
+00:06:39.820 --> 00:06:45.568
+And then const spinner = an anonymous
+
+70
+00:06:45.568 --> 00:06:50.425
+function that returns image src
+
+71
+00:06:54.400 --> 00:06:56.014
+I guess you don't need that style.
+
+72
+00:06:56.014 --> 00:06:58.121
+You don't need that background image.
+
+73
+00:06:58.121 --> 00:06:59.023
+Okay, get rid of that,
+
+74
+00:07:03.681 --> 00:07:10.203
+"/public/img/loading.png".
+
+75
+00:07:11.530 --> 00:07:15.116
+And alt = ' loading indicator'.
+
+76
+00:07:17.280 --> 00:07:20.619
+And then export default spinner.
+
+77
+00:07:29.237 --> 00:07:33.414
+Okay, so we created a new keyframe up
+here, and what's going to be stored in
+
+78
+00:07:33.414 --> 00:07:37.554
+this key frame is actually going to be
+the generated name of that key frame.
+
+79
+00:07:37.554 --> 00:07:42.514
+And then we're going to be outputting
+that here in the animation in the CSS for
+
+80
+00:07:42.514 --> 00:07:44.285
+this image, tag, right?
+
+81
+00:07:47.270 --> 00:07:50.967
+So now we have this dumb components,
+this presentational component
+
+82
+00:07:50.967 --> 00:07:55.184
+that we can just render anywhere that we
+want a nice little spinning pin wheel.
+
+83
+00:07:55.184 --> 00:07:59.315
+Really nice for loading, now we have this
+Spinner component that we can use anywhere
+
+84
+00:07:59.315 --> 00:08:01.320
+that we're loading anything.
+
+85
+00:08:01.320 --> 00:08:04.610
+So we'll actually end up using
+it in a couple of places,
+
+86
+00:08:04.610 --> 00:08:06.781
+hence why we made its own component.
+
+87
+00:08:06.781 --> 00:08:09.762
+But this is kinda the gist of how
+you do keyframe animations with
+
+88
+00:08:09.762 --> 00:08:12.865
+styled components, which I think
+is pretty slick in my opinion.
+
+89
+00:08:14.540 --> 00:08:20.590
+Okay, so now we're going to
+use this inside of details So
+
+90
+00:08:20.590 --> 00:08:26.006
+we're going to import
+spinner from './Spinner'
+
+91
+00:08:29.987 --> 00:08:30.635
+Okay?
+
+92
+00:08:34.739 --> 00:08:40.752
+And the other thing we're gonna import
+here at the top is a library called axios,
+
+93
+00:08:40.752 --> 00:08:43.080
+import axios from 'axios'.
+
+94
+00:08:43.080 --> 00:08:47.996
+This is just an Ajax client, it doesn't
+bother me if you don't like this one or
+
+95
+00:08:47.996 --> 00:08:50.677
+wanna use a different
+sort of Ajax client or
+
+96
+00:08:50.677 --> 00:08:54.863
+if you just wanna write using
+the fetch API, that all works for me.
+
+97
+00:08:54.863 --> 00:08:57.413
+I'm just gonna use axios
+because it's really easy and
+
+98
+00:08:57.413 --> 00:09:00.560
+it's one that I've used for
+a long time and super reliable.
+
+99
+00:09:00.560 --> 00:09:04.182
+It's also very easy to test with which I
+will show you later how to test these Ajax
+
+100
+00:09:04.182 --> 00:09:04.736
+requests.
+
+101
+00:09:06.490 --> 00:09:10.524
+So suffice to say, that's why
+we're going to use axios for now.
+
+102
+00:09:13.283 --> 00:09:15.921
+Okay, down here in details,
+
+103
+00:09:20.710 --> 00:09:23.877
+Had a prop type inside a show.
+
+104
+00:09:23.877 --> 00:09:27.465
+Yeah, okay, so go back to your types.js
+real quick, and I already have it so
+
+105
+00:09:27.465 --> 00:09:28.670
+you don't need to do that.
+
+106
+00:09:30.050 --> 00:09:34.782
+No problem,
+we're gonna go to details cool, and
+
+107
+00:09:34.782 --> 00:09:39.741
+then we're gonna have some
+state up here at the top,
+
+108
+00:09:39.741 --> 00:09:44.266
+so state = {apidata,
+is that what I started?
+
+109
+00:09:44.266 --> 00:09:49.298
+Yep, apidata and
+its initial state is going to be
+
+110
+00:09:49.298 --> 00:09:58.797
+an {imbdbRrating}};, Right?
+
+111
+00:10:01.108 --> 00:10:04.047
+So we're gonna request all this
+information back from the API and
+
+112
+00:10:04.047 --> 00:10:07.414
+one of the requests or one of the answers
+that it's going to give back to us is
+
+113
+00:10:07.414 --> 00:10:09.348
+this rating that we're going to display.
+
+114
+00:10:11.897 --> 00:10:15.462
+Okay, and then we're going
+to make a componentDidmount,
+
+115
+00:10:15.462 --> 00:10:21.313
+I think it goes between these two,
+componentDidmount, And
+
+116
+00:10:21.313 --> 00:10:25.433
+what we're gonna do is
+we're gonna axios.get
+
+117
+00:10:29.849 --> 00:10:36.393
+Http://localhost:3000.
+
+118
+00:10:39.336 --> 00:10:46.690
+/$ this.props.show.imdbid
+
+119
+00:10:50.200 --> 00:10:54.914
+Okay, this is going to get
+us the data from the API.
+
+120
+00:10:54.914 --> 00:11:00.130
+It's going to give us back a promise,
+so we're gonna say .then and
+
+121
+00:11:00.130 --> 00:11:03.895
+we're going to get a response
+back from the API.
+
+122
+00:11:03.895 --> 00:11:06.718
+So the response is going to look like
+
+123
+00:11:11.846 --> 00:11:19.832
+{data: {rating: string}
+
+124
+00:11:40.487 --> 00:11:41.635
+So this is just typing for
+
+125
+00:11:41.635 --> 00:11:44.542
+the data that we know we're gonna
+be getting back from the API.
+
+126
+00:11:49.130 --> 00:11:56.688
+And coming here,
+then we're gonna say this.setState( and
+
+127
+00:11:56.688 --> 00:12:03.239
+that's gonna be (apiData: response.data)).
+
+128
+00:12:11.690 --> 00:12:14.705
+And I call this imdb, so
+let's just call this rating up here,
+
+129
+00:12:21.618 --> 00:12:22.358
+Okay?
+
+130
+00:12:22.358 --> 00:12:23.662
+So just to recap here,
+
+131
+00:12:32.560 --> 00:12:37.733
+So the first thing is to do is gonna
+do a .get local host 3000 providing
+
+132
+00:12:37.733 --> 00:12:42.581
+your API server is running, so
+make sure your API server is running.
+
+133
+00:12:42.581 --> 00:12:46.965
+And it's going to go out and get from
+the imdbID based on the imdbID, then it's
+
+134
+00:12:46.965 --> 00:12:51.418
+going to give you back this response
+object, which is gonna give you back data,
+
+135
+00:12:51.418 --> 00:12:55.093
+which is something that axios does,
+then it's gonna do rating.
+
+136
+00:12:55.093 --> 00:12:59.521
+And that's gonna be a string, and
+we're going to use that to set state, so
+
+137
+00:12:59.521 --> 00:13:03.831
+that API data is going to be replaced
+by whatever comes back from the API.
+
+138
+00:13:03.831 --> 00:13:08.270
+&gt;&gt; This is the comment in chat about why
+would you use axios versus fetch, and
+
+139
+00:13:08.270 --> 00:13:11.205
+the fact is that you don't
+have to call .json and
+
+140
+00:13:11.205 --> 00:13:14.850
+all that stuff it just sends
+the data as you'd expect.
+
+141
+00:13:14.850 --> 00:13:18.667
+And then also, error handling,
+you don't have to check if it's,-
+
+142
+00:13:18.667 --> 00:13:19.191
+&gt;&gt; Yep.
+
+143
+00:13:19.191 --> 00:13:21.249
+&gt;&gt; Response code is 200.
+
+144
+00:13:21.249 --> 00:13:22.974
+&gt;&gt; Yes.
+&gt;&gt; Just do a ,catch and
+
+145
+00:13:22.974 --> 00:13:26.482
+grabbing yours,-
+&gt;&gt; it's a little bit more baked than just
+
+146
+00:13:26.482 --> 00:13:29.680
+like it does a lot more for
+you than fetch does.
+
+147
+00:13:29.680 --> 00:13:31.905
+In particular, for this workshop,
+
+148
+00:13:31.905 --> 00:13:35.438
+the reason why I chose it is
+that axios is very easy to test.
+
+149
+00:13:35.438 --> 00:13:38.324
+And so we're gonna be using that
+capability later, whereas with fetch,
+
+150
+00:13:38.324 --> 00:13:40.380
+you need to do a little bit
+more mocking on your part.
+
+151
+00:13:41.570 --> 00:13:45.880
+So that's why I chose axios, and
+again, I've been using axios for
+
+152
+00:13:45.880 --> 00:13:47.253
+years at this point.
+
+153
+00:13:51.788 --> 00:13:57.733
+Cool, So
+
+154
+00:13:57.733 --> 00:14:00.597
+now we have that coming back from the API.
+
+155
+00:14:03.180 --> 00:14:08.086
+So what we're gonna do
+here is underneath here,
+
+156
+00:14:08.086 --> 00:14:12.163
+we're gonna say let rating component.
+
+157
+00:14:14.554 --> 00:14:20.818
+And then we're gonna say if
+this.state.api data.rating,
+
+158
+00:14:20.818 --> 00:14:25.071
+so if we have gotten
+this back from the API,
+
+159
+00:14:25.071 --> 00:14:31.940
+then rating component is going to
+be equal to an h3 with that rating.
+
+160
+00:14:31.940 --> 00:14:38.157
+So it's gonna be
+this.State.apidata.rating else
+
+161
+00:14:42.220 --> 00:14:45.628
+Rating component is going
+to be equal to our spinner.
+
+162
+00:14:49.650 --> 00:14:56.284
+So again, coming back to, you wanna think
+about your components in snapshots, right?
+
+163
+00:14:56.284 --> 00:15:01.102
+So, given the snapshot that the API data
+has come back, it's gonna be equal to
+
+164
+00:15:01.102 --> 00:15:05.920
+this h3 right here, given the snapshot
+that it has not come back from the API,
+
+165
+00:15:05.920 --> 00:15:08.638
+it's gonna be this loading state, right?
+
+166
+00:15:12.751 --> 00:15:18.440
+Okay, and the more we're gonna do is
+we're gonna put that between year and
+
+167
+00:15:18.440 --> 00:15:22.974
+poster, so right here we're
+gonna say ratingComponent.
+
+168
+00:15:28.094 --> 00:15:32.669
+Cool, So if we come back here,
+
+169
+00:15:34.824 --> 00:15:38.660
+And we go to one of our details page.
+
+170
+00:15:38.660 --> 00:15:41.817
+Notice we get this nice little spinner
+right there, and then eventually resolves,
+
+171
+00:15:41.817 --> 00:15:42.847
+and gives us back a rating.
+
+172
+00:15:45.560 --> 00:15:51.411
+So again, what that looks like I
+
+173
+00:15:51.411 --> 00:15:55.211
+have it introduced an artificial delay
+cuz it was coming back too fast, so
+
+174
+00:15:55.211 --> 00:15:57.736
+it's gonna come back between 0 and
+5 seconds.
+
+175
+00:15:57.736 --> 00:15:59.344
+So that's why it seems slow.
+
+176
+00:16:01.619 --> 00:16:06.043
+In fact,
+if you look at that code ratings API, see,
+
+177
+00:16:06.043 --> 00:16:12.070
+it's just generating random,
+timeout right there for 5 seconds.
+
+178
+00:16:12.070 --> 00:16:20.690
+So that's why it seems slow, it's because
+it's intentionally slow, Any questions?
+
+179
+00:16:20.690 --> 00:16:21.274
+Yeah?
+
+180
+00:16:21.274 --> 00:16:24.593
+&gt;&gt; Yeah, just a general question
+about components, so in that if else,
+
+181
+00:16:24.593 --> 00:16:26.520
+I just wanna make sure I understand.
+
+182
+00:16:26.520 --> 00:16:31.288
+So we could capitalize
+the rating component,
+
+183
+00:16:31.288 --> 00:16:35.575
+and then, call it as, like in the verse.
+
+184
+00:16:35.575 --> 00:16:38.277
+&gt;&gt; So if you wanted to do that,
+what you would have to do is,
+
+185
+00:16:38.277 --> 00:16:40.126
+rating component like this, right?
+
+186
+00:16:40.126 --> 00:16:40.697
+&gt;&gt; Yep.
+
+187
+00:16:40.697 --> 00:16:42.140
+&gt;&gt; Then you would have
+to make it a function.
+
+188
+00:16:44.596 --> 00:16:45.715
+&gt;&gt; Okay.
+
+189
+00:16:45.715 --> 00:16:50.040
+&gt;&gt; And then here you would say,
+rating component, like that, right?
+
+190
+00:16:50.040 --> 00:16:54.218
+Same thing for the one up there,
+that's a bad idea, don't do that,
+
+191
+00:16:54.218 --> 00:16:57.606
+[LAUGH] Tte reason why is
+you'd be a creating component,
+
+192
+00:16:57.606 --> 00:17:02.383
+you'd be creating functions rather on
+every render, which is slow, right?
+
+193
+00:17:02.383 --> 00:17:05.308
+That's why we didn't do .bind
+before inside of the render body.
+
+194
+00:17:05.308 --> 00:17:08.924
+You don't wanna be generating and
+destroying things on every render,
+
+195
+00:17:08.924 --> 00:17:12.660
+cuz that's a lot of garbage collection
+that you don't wanna go through,
+
+196
+00:17:12.660 --> 00:17:13.590
+that make sense?
+
+197
+00:17:13.590 --> 00:17:16.219
+Cool it's a good question so
+
+198
+00:17:16.219 --> 00:17:22.035
+I think this is pretty amazing
+it just makes doing things like,
+
+199
+00:17:24.090 --> 00:17:28.031
+Requesting stuff from APIs and
+asynchronous data, thinking about things
+
+200
+00:17:28.031 --> 00:17:31.545
+in terms of snapshots,
+it just really makes sense for me, right?
+
+201
+00:17:31.545 --> 00:17:33.650
+Given this data,
+it looks like this, right?
+
+202
+00:17:33.650 --> 00:17:36.243
+Before it gets stuff from
+the API looks like this,
+
+203
+00:17:36.243 --> 00:17:38.412
+after stuff from the API looks like this.
+
+204
+00:17:38.412 --> 00:17:43.136
+There's no imperative like, grab this
+thing and change its inner HTML and then,
+
+205
+00:17:43.136 --> 00:17:45.262
+make sure later that it has changed.
+
+206
+00:17:45.262 --> 00:17:48.049
+It's crazy having components just
+keep track of their state, and
+
+207
+00:17:48.049 --> 00:17:51.100
+then just referencing the state,
+makes a lot of sense to me personally.
+

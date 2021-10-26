@@ -1,0 +1,108 @@
+[00:00:00]
+>> So for us, we're gonna do something with componentDidMount, except for we're gonna do this not on search, so get rid of that. We're gonna do on details, So the first thing that we;re gonna have to do here is unfortunately, this is a function component, right? That is just a function the returns mark up.
+
+[00:00:27]
+We're gonna have to convert this to an ES6 Class, which is something that you'll kinda find yourself going back and forth with sometimes. But that's normal and healthy, so we're gonna I say class Details extends Component, and bring in Component up here. Okay, Then we're gonna to turn this into our render method right here.
+
+[00:01:09]
+Then down here And then we need to turn the props up here, in fact we can just get rid of that, and say props show is going to be a Show. And everywhere that we say props.show, which I think is just that one place, right, we're just gonna say this.prop.show because now it's gonna be on the context, not being passed in from the props.
+
+[00:02:03]
+So you're gonna notice up here that class is complaining, okay? This should be a stateless functional component, that's what the AB and B configuration does for you, but it's a Normal, okay? So what we're gonna do is we're gonna have this kind of request, something from our fake API, this used to use the open movie database, which unfortunately went closed, so it's no longer still open.
+
+[00:02:31]
+[LAUGH] Understandably so, so I've mocked out a fake API for you, so if you go over to your terminal really quick, open a new window. I'm gonna go into talks FM complete mess, so I'm not gonna close my dev server, I'm gonna leave that open. But this one, I'm gonna run yarn API, which I already included for you, and you're gonna get something that looks like this starting server on Port 3000.
+
+[00:03:08]
+And what this is going to do is it's basically going to make a fake API for you, that's gonna give you back ratings for your TV shows, it's random right? I did not rate these myself, right? It's just randomly generated every single time. Cool So now that this is an ESX component, let's go ahead and, Yeah, start requesting data.
+
+[00:03:45]
+So by virtue of the fact that we only make the API request after the the item has amounted to the DOM, we have this interim state that we're going to be loading, right? Because it's going to load the first time without that rating, so that means that we need to load with a loading state, and then eventually render something out.
+
+[00:04:04]
+Does that make sense, right? This is good, this is why you don't make API requests in component will mount because you don't wanna wait for your API request to finish before you render something. You wanna render first and then request something and then render again once the data is back, that's why you do all this in component did mount.
+
+[00:04:23]
+So let's create a new class and a new page called spinner.JSX, and this will be a reusable component that we can use anytime we're loading. So let's opt in to flow, we're going to import React from 'react' And we're going to import styled and keyframes from 'styled-components'. So I'm gonna show you another fun capability with styled components, you can still do keyframe animations with them.
+
+[00:05:06]
+So what we're gonna do is we're gonna make a spin keyframe animation, that's gonna be equal to keyframes, which is another tag template literal, and we're gonna go from Transform, rotate, zero degrees. To transform, rotate 360 degrees. Actually I'm pretty sure now that I've written this out, I'm pretty sure you just need two write and then in first the from.
+
+[00:05:50]
+Whatever the case we're just gonna leave it cuz that's what it is in my notes okay, then we're gonna do const Image = styled.img, And we're gonna say animation And then we're gonna put in spin, 4s, infinite, Linear; and background-image: url(/public/image/loading.png And then const spinner = an anonymous function that returns image src I guess you don't need that style.
+
+[00:06:56]
+You don't need that background image. Okay, get rid of that, "/public/img/loading.png". And alt = ' loading indicator'. And then export default spinner. Okay, so we created a new keyframe up here, and what's going to be stored in this key frame is actually going to be the generated name of that key frame.
+
+[00:07:37]
+And then we're going to be outputting that here in the animation in the CSS for this image, tag, right? So now we have this dumb components, this presentational component that we can just render anywhere that we want a nice little spinning pin wheel. Really nice for loading, now we have this Spinner component that we can use anywhere that we're loading anything.
+
+[00:08:01]
+So we'll actually end up using it in a couple of places, hence why we made its own component. But this is kinda the gist of how you do keyframe animations with styled components, which I think is pretty slick in my opinion. Okay, so now we're going to use this inside of details So we're going to import spinner from './Spinner' Okay?
+
+[00:08:34]
+And the other thing we're gonna import here at the top is a library called axios, import axios from 'axios'. This is just an Ajax client, it doesn't bother me if you don't like this one or wanna use a different sort of Ajax client or if you just wanna write using the fetch API, that all works for me.
+
+[00:08:54]
+I'm just gonna use axios because it's really easy and it's one that I've used for a long time and super reliable. It's also very easy to test with which I will show you later how to test these Ajax requests. So suffice to say, that's why we're going to use axios for now.
+
+[00:09:13]
+Okay, down here in details, Had a prop type inside a show. Yeah, okay, so go back to your types.js real quick, and I already have it so you don't need to do that. No problem, we're gonna go to details cool, and then we're gonna have some state up here at the top, so state = {apidata, is that what I started?
+
+[00:09:44]
+Yep, apidata and its initial state is going to be an {imbdbRrating}};, Right? So we're gonna request all this information back from the API and one of the requests or one of the answers that it's going to give back to us is this rating that we're going to display.
+
+[00:10:11]
+Okay, and then we're going to make a componentDidmount, I think it goes between these two, componentDidmount, And what we're gonna do is we're gonna axios.get Http://localhost:3000. /$ this.props.show.imdbid Okay, this is going to get us the data from the API. It's going to give us back a promise, so we're gonna say .then and we're going to get a response back from the API.
+
+[00:11:03]
+So the response is going to look like {data: {rating: string} So this is just typing for the data that we know we're gonna be getting back from the API. And coming here, then we're gonna say this.setState( and that's gonna be (apiData: response.data)). And I call this imdb, so let's just call this rating up here, Okay?
+
+[00:12:22]
+So just to recap here, So the first thing is to do is gonna do a .get local host 3000 providing your API server is running, so make sure your API server is running. And it's going to go out and get from the imdbID based on the imdbID, then it's going to give you back this response object, which is gonna give you back data, which is something that axios does, then it's gonna do rating.
+
+[00:12:55]
+And that's gonna be a string, and we're going to use that to set state, so that API data is going to be replaced by whatever comes back from the API.
+>> This is the comment in chat about why would you use axios versus fetch, and the fact is that you don't have to call .json and all that stuff it just sends the data as you'd expect.
+
+[00:13:14]
+And then also, error handling, you don't have to check if it's,-
+>> Yep.
+>> Response code is 200.
+>> Yes.
+>> Just do a ,catch and grabbing yours,-
+>> it's a little bit more baked than just like it does a lot more for you than fetch does. In particular, for this workshop, the reason why I chose it is that axios is very easy to test.
+
+[00:13:35]
+And so we're gonna be using that capability later, whereas with fetch, you need to do a little bit more mocking on your part. So that's why I chose axios, and again, I've been using axios for years at this point. Cool, So now we have that coming back from the API.
+
+[00:14:03]
+So what we're gonna do here is underneath here, we're gonna say let rating component. And then we're gonna say if this.state.api data.rating, so if we have gotten this back from the API, then rating component is going to be equal to an h3 with that rating. So it's gonna be this.State.apidata.rating else Rating component is going to be equal to our spinner.
+
+[00:14:49]
+So again, coming back to, you wanna think about your components in snapshots, right? So, given the snapshot that the API data has come back, it's gonna be equal to this h3 right here, given the snapshot that it has not come back from the API, it's gonna be this loading state, right?
+
+[00:15:12]
+Okay, and the more we're gonna do is we're gonna put that between year and poster, so right here we're gonna say ratingComponent. Cool, So if we come back here, And we go to one of our details page. Notice we get this nice little spinner right there, and then eventually resolves, and gives us back a rating.
+
+[00:15:45]
+So again, what that looks like I have it introduced an artificial delay cuz it was coming back too fast, so it's gonna come back between 0 and 5 seconds. So that's why it seems slow. In fact, if you look at that code ratings API, see, it's just generating random, timeout right there for 5 seconds.
+
+[00:16:12]
+So that's why it seems slow, it's because it's intentionally slow, Any questions? Yeah?
+>> Yeah, just a general question about components, so in that if else, I just wanna make sure I understand. So we could capitalize the rating component, and then, call it as, like in the verse.
+
+[00:16:35]
+
+>> So if you wanted to do that, what you would have to do is, rating component like this, right?
+>> Yep.
+>> Then you would have to make it a function.
+>> Okay.
+>> And then here you would say, rating component, like that, right? Same thing for the one up there, that's a bad idea, don't do that, [LAUGH] Tte reason why is you'd be a creating component, you'd be creating functions rather on every render, which is slow, right?
+
+[00:17:02]
+That's why we didn't do .bind before inside of the render body. You don't wanna be generating and destroying things on every render, cuz that's a lot of garbage collection that you don't wanna go through, that make sense? Cool it's a good question so I think this is pretty amazing it just makes doing things like, Requesting stuff from APIs and asynchronous data, thinking about things in terms of snapshots, it just really makes sense for me, right?
+
+[00:17:31]
+Given this data, it looks like this, right? Before it gets stuff from the API looks like this, after stuff from the API looks like this. There's no imperative like, grab this thing and change its inner HTML and then, make sure later that it has changed. It's crazy having components just keep track of their state, and then just referencing the state, makes a lot of sense to me personally.
+
